@@ -8,6 +8,7 @@ import { EmployeeSigninComponent } from './employee-signin/employee-signin.compo
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { DisplayProductComponent } from './display-product/display-product.component';
 
 const routes: Routes = [
   {path:"", component:LandingPageComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:"employeePanel", component:EmployeePanelComponent},
   {path:"addEmployee", component:AddEmployeeComponent},
   {path:"deleteEmployee", component:DeleteEmployeeComponent},
-  {path:"generateReport", component:GenerateReportComponent}
+  {path:"generateReport", component:GenerateReportComponent},
+  {path:"displayProducts", component:DisplayProductComponent}
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];
 
