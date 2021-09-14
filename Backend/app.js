@@ -3,6 +3,7 @@ let mongoose = require("mongoose")
 let cors = require("cors")
 let bodyParser = require("body-parser")
 let accountRouter = require("./router/account.router");
+let productRouter = require("./router/product.router");
 
 let app = express();
 
@@ -24,6 +25,10 @@ app.use("/api/employee",accountRouter);
 //http://localhost:1020/api/user/signIn 
 //http://localhost:1020/api/user/signUp 
 app.use("/api/user",accountRouter);
+
+
+//http://localhost:1020/api/product/getAllProducts
+app.use("/api/product",productRouter);
 
 app.listen(1020,()=>console.log("Server running on port number 1020"))
 
