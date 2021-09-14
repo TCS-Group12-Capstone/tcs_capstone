@@ -8,13 +8,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEmployeeComponent,
     DeleteEmployeeComponent,
-    GenerateReportComponent
+    GenerateReportComponent,
+    EmployeePanelComponent
   ],
   imports: [
     BrowserModule,
