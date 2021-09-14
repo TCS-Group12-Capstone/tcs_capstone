@@ -9,10 +9,13 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  empAccountCreate(addEmployee:Employee):Observable<any>{
-    return this.http.post("http://localhost:9090/api/user/signUp",addEmployee,
-    {responseType:'text'});
+  empAccountCreate(addEmployee: Employee): Observable<any> {
+    return this.http.post("http://localhost:9090/api/user/signUp", addEmployee,
+      { responseType: 'text' });
+  }
+  sentRequests(request: Request): Observable<any> {
+    return this.http.post("http://localhost:1020/api/requests/send-requests", request);
   }
 }
