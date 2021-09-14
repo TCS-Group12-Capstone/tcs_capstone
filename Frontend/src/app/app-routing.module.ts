@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminSigninComponent } from './admin-signin/admin-signin.component';
+import { UserSigninComponent } from './user-signin/user-signin.component';
+import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
 
 const routes: Routes = [
+  {path:"adminSignIn", component:AdminSigninComponent},
+  {path:"userSignIn", component:UserSigninComponent},
+  {path:"employeeSignIn", component:EmployeeSigninComponent},
   {path:"addEmployee", component:AddEmployeeComponent},
   {path:"deleteEmployee", component:DeleteEmployeeComponent},
   {path:"generateReport", component:GenerateReportComponent}
