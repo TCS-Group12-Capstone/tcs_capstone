@@ -1,0 +1,17 @@
+<div>
+    <h2>Add Employee</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="addEmp()">
+        <label>Employee First Name</label>
+        <input type="text" formControlName="fname"/><br/>
+        <label>Employee Last Name</label>
+        <input type="text" formControlName="lname"/><br/>
+        <label>EmailId</label>
+        <input type="text" formControlName="email"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="password"/><br/>
+        <input type="submit" value="Add Employee"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br>
+     <!-- <a routerLink="/adminPanel">Main Page</a> --> 
+</div>
