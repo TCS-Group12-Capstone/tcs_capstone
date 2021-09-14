@@ -1,12 +1,16 @@
-<div>
-    <h2>Employee Sign In</h2>
-    <form [formGroup]="loginRef" (ngSubmit)="checkLogin()">
-        <label>Email ID: </label>
-        <input type="text" formControlName="email"/><br/>
-        <label>New Password: </label>
-        <input type="password" formControlName="password"/><br/>
-        <a routerLink="/employeePanel"><input type="submit" value="Login"/></a> 
-        <input type="reset" value="reset"/>
-    </form>
-    <br>
+<div style="height:100vh">
+    <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;">Employee Sign In</h4>
+            <form class="form-inline" [formGroup]="loginRef" (ngSubmit)="checkLogin()">
+                <input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password"/><br/>
+                <div style="text-align: center;">
+                    <a routerLink="/employeePanel"><button class="btn btn-info" style="margin-inline: 10px;"type="submit">Login</button></a> 
+                    <button class="btn btn-info" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
