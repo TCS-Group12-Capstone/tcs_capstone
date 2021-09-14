@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
-import { AdminSigninComponent } from './admin-signin/admin-signin.component';
+import { SignInComponent } from './admin/signin/signin.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -25,7 +26,7 @@ import { SendRequestComponent } from './send-request/send-request.component';
     GenerateReportComponent,
     EmployeePanelComponent,
     EditUserProfileComponent,
-    AdminSigninComponent,
+    SignInComponent,
     UserSigninComponent,
     EmployeeSigninComponent,
     LandingPageComponent,
@@ -36,6 +37,7 @@ import { SendRequestComponent } from './send-request/send-request.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    RouterModule,
     HttpClientModule
   ],
   providers: [],
