@@ -17,7 +17,7 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
     AddEmployeeComponent,
     DeleteEmployeeComponent,
     GenerateReportComponent,
-    EmployeePanelComponent
+    EmployeePanelComponent,
     EditUserProfileComponent
   ],
   imports: [
