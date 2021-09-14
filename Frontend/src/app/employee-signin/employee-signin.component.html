@@ -1,1 +1,12 @@
-<p>employee-signin works!</p>
+<div>
+    <h2>Employee Sign In</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="checkLogin()">
+        <label>Email ID: </label>
+        <input type="text" formControlName="email"/><br/>
+        <label>New Password: </label>
+        <input type="password" formControlName="password"/><br/>
+        <a routerLink="/employeePanel"><input type="submit" value="Login"/></a> 
+        <input type="reset" value="reset"/>
+    </form>
+    <br>
+</div>
