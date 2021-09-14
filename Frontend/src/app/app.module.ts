@@ -14,6 +14,7 @@ import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { DisplayProductComponent } from './display-product/display-product.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AdminSigninComponent,
     UserSigninComponent,
     EmployeeSigninComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    DisplayProductComponent
   ],
   imports: [
     BrowserModule,
