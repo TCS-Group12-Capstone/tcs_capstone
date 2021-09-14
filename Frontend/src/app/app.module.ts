@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
     AddEmployeeComponent,
     DeleteEmployeeComponent,
     GenerateReportComponent,
+    EmployeePanelComponent
     EditUserProfileComponent
   ],
   imports: [
