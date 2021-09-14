@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../classes/product';
 
 @Component({
@@ -10,7 +11,7 @@ export class DisplayProductComponent implements OnInit {
 
   products: Array<Product> = [];
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +21,7 @@ export class DisplayProductComponent implements OnInit {
   }
 
   goToCart() {
-
+    this.router.navigate(["cart"]);
   }
 
 }
