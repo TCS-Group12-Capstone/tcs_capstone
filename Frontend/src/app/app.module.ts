@@ -10,6 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
+import { AdminSigninComponent } from './admin-signin/admin-signin.component';
+import { UserSigninComponent } from './user-signin/user-signin.component';
+import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
     DeleteEmployeeComponent,
     GenerateReportComponent,
     EmployeePanelComponent,
-    EditUserProfileComponent
+    EditUserProfileComponent,
+    AdminSigninComponent,
+    UserSigninComponent,
+    EmployeeSigninComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
