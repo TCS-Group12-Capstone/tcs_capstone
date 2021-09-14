@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
@@ -8,6 +9,7 @@ import { DeleteEmployeeComponent } from './delete-employee/delete-employee.compo
 import { GenerateReportComponent } from './generate-report/generate-report.component';
 
 const routes: Routes = [
+  {path:"", component:LandingPageComponent},
   {path:"adminSignIn", component:AdminSigninComponent},
   {path:"userSignIn", component:UserSigninComponent},
   {path:"employeeSignIn", component:EmployeeSigninComponent},

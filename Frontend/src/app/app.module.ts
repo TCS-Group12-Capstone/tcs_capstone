@@ -13,6 +13,7 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EmployeeSigninComponent } from './employee-signin/employee-signin.compo
     EditUserProfileComponent,
     AdminSigninComponent,
     UserSigninComponent,
-    EmployeeSigninComponent
+    EmployeeSigninComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
