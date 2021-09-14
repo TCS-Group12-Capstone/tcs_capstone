@@ -2,7 +2,7 @@ let express = require("express")
 let mongoose = require("mongoose")
 let cors = require("cors")
 let bodyParser = require("body-parser")
-let employeeRouter = require("./router/account.router");
+let accountRouter = require("./router/account.router");
 
 let app = express();
 
@@ -16,9 +16,14 @@ let url = "mongodb+srv://phu:XBMQocHQxxpBqRUW@cluster0.3xrre.mongodb.net/testDB?
 mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.log(error));
 
 
-//http://localhost:1020/api/product/addEmployee 
-//http://localhost:1020/api/product/deleteEmployee 
-app.use("/api/employee",employeeRouter);
+//http://localhost:1020/api/employee/addEmployee 
+//http://localhost:1020/api/employee/deleteEmployee 
+app.use("/api/employee",accountRouter);
+
+
+//http://localhost:1020/api/user/signIn 
+//http://localhost:1020/api/user/signUp 
+app.use("/api/user",accountRouter);
 
 app.listen(1020,()=>console.log("Server running on port number 1020"))
 
