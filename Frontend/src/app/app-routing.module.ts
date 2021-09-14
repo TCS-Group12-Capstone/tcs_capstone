@@ -8,16 +8,18 @@ import { EmployeeSigninComponent } from './employee-signin/employee-signin.compo
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { SendRequestComponent } from './send-request/send-request.component';
 
 const routes: Routes = [
-  {path:"", component:LandingPageComponent},
-  {path:"adminSignIn", component:AdminSigninComponent},
-  {path:"userSignIn", component:UserSigninComponent},
-  {path:"employeeSignIn", component:EmployeeSigninComponent},
-  {path:"employeePanel", component:EmployeePanelComponent},
-  {path:"addEmployee", component:AddEmployeeComponent},
-  {path:"deleteEmployee", component:DeleteEmployeeComponent},
-  {path:"generateReport", component:GenerateReportComponent}
+  { path: "", component: LandingPageComponent },
+  { path: "adminSignIn", component: AdminSigninComponent },
+  { path: "userSignIn", component: UserSigninComponent },
+  { path: "employeeSignIn", component: EmployeeSigninComponent },
+  { path: "employeePanel", component: EmployeePanelComponent },
+  { path: "addEmployee", component: AddEmployeeComponent },
+  { path: "deleteEmployee", component: DeleteEmployeeComponent },
+  { path: "generateReport", component: GenerateReportComponent },
+  { path: "SendRequest", component: SendRequestComponent }
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];
 
