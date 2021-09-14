@@ -8,11 +8,7 @@ import { Product } from '../classes/product';
 })
 export class DisplayProductComponent implements OnInit {
 
-  products: Array<Product> = [
-    new Product("1", "Apple", 12.99, 10),
-    new Product("2", "Orange", 13.99, 10),
-    new Product("3", "Banana", 12.99, 0),
-  ];
+  products: Array<Product> = [];
 
   constructor() { }
 
@@ -24,7 +20,7 @@ export class DisplayProductComponent implements OnInit {
   }
 
   goToCart() {
-    
+
   }
 
 }
