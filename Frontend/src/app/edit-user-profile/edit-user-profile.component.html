@@ -1,0 +1,17 @@
+<div>
+    <h2>Edit Profile</h2>
+    <form [formGroup]="userProfileRef" (ngSubmit)="updateUserInfo()">
+        <label>Address: </label>
+        <input type="text" value="current address placeholder" formControlName="address"/><br/>
+        <label>Phone Number: </label>
+        <input type="text" value="current phone# placeholder" formControlName="phone"/><br/>
+        <label>Email ID: </label>
+        <input type="text" value="current email placeholder" formControlName="email"/><br/>
+        <label>New Password: </label>
+        <input type="password" formControlName="password"/><br/>
+        <input type="submit" value="Update"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br>
+     <!-- <a routerLink="/adminPanel">Main Page</a> --> 
+</div>
