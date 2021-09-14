@@ -15,6 +15,7 @@ import { UserSigninComponent } from './user-signin/user-signin.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DisplayProductComponent } from './display-product/display-product.compo
     UserSigninComponent,
     EmployeeSigninComponent,
     LandingPageComponent,
-    DisplayProductComponent
+    DisplayProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
