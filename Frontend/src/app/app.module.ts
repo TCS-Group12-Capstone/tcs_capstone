@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
@@ -22,6 +22,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-employee-profile.component';
+import { UserFundsComponent } from './user-funds/user-funds.component';
+import { OrderStatusComponent } from './order-status/order-status.component';
 
 @NgModule({
   declarations: [
@@ -41,15 +45,19 @@ import { SendRequestComponent } from './send-request/send-request.component';
     LandingPageComponent,
     DisplayProductComponent,
     CartComponent,
-    SendRequestComponent
-
+    SendRequestComponent,
+    CheckoutComponent,
+    EditEmployeeProfileComponent,
+    UserFundsComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
