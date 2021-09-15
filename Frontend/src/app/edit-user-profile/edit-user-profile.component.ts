@@ -21,8 +21,5 @@ export class EditUserProfileComponent implements OnInit {
   updateUserInfo(){
     let data = this.userProfileRef.value;
     console.log(data);
-
-    this.userProfileRef.reset();
   }
-
 }
