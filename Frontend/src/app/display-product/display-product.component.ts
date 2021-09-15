@@ -12,6 +12,7 @@ import { ProductService } from '../services/product.service';
 })
 export class DisplayProductComponent implements OnInit {
 
+  user: string = "phu@gmail.com";
   cartSize: number = 0;
   cart: Array<Cart> = [];
   products: Array<Product> = [];
@@ -24,10 +25,15 @@ export class DisplayProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe(
-      result => {this.products = result},
+      result => this.products = result,
       error => console.log(error)
     )
-    this.cartService.getCart("123").subscribe(
+
+    this.updateCartSize();
+  }
+
+  updateCartSize() {
+    this.cartService.getCart(this.user).subscribe(
       result => {this.showCartSize(result)},
       error => console.log()
     )
@@ -40,7 +46,9 @@ export class DisplayProductComponent implements OnInit {
   }
 
   addProductToCart(product: Product) {
-    let selectedProduct = new Cart("123", product._id, 1);
+    let selectedProduct = new Cart(this.user, product._id, 1);
+
+    this.cartSize += selectedProduct.quantity;
 
     this.cartService.addCart(selectedProduct).subscribe(
       result => console.log(result),
@@ -49,7 +57,7 @@ export class DisplayProductComponent implements OnInit {
   }
 
   goToCart() {
-    this.router.navigate(["cart"]);
+    this.router.navigate(["cart", this.user]);
   }
 
 }
