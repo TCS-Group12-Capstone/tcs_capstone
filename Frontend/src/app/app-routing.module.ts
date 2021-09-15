@@ -17,6 +17,7 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { UserFundsComponent } from './user-funds/user-funds.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "profileEdit", component: EditEmployeeProfileComponent},
   { path: "editUserProfile", component: EditUserProfileComponent},
+  { path: "userFunds", component: UserFundsComponent},
   { path: "adminPanel", component: AdminPanelComponent}
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];

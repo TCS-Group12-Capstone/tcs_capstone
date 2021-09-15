@@ -1,1 +1,16 @@
-<p>user-funds works!</p>
+<div style="height:100vh">
+    <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;">Add Funds</h4>
+            <form [formGroup]="fundRef" (ngSubmit)="addFunds()">
+                <input class="form-control mb-2 mr-sm-2" type="text" formControlName="account" placeholder="Account #"/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="number" formControlName="fund" placeholder="Amount"/><br/>
+                <div style="text-align: center;">
+                    <button class="btn btn-info" style="margin-inline: 10px;"type="submit">Add Funds</button>
+                    <button class="btn btn-info" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

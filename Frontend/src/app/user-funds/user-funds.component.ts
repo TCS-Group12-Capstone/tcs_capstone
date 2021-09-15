@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-funds',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFundsComponent implements OnInit {
 
+  fundRef = new FormGroup({
+    account: new FormControl,
+    fundAmt: new FormControl
+  })
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addFunds() {
+    console.log('hi');
   }
 
 }
