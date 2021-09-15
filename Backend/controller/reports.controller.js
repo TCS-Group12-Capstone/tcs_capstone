@@ -15,8 +15,9 @@ let getAllReports = (request,response)=> {
 
 
 let getDailyReport = (request,response)=> {
-    
-    reportsModel.find({},(err,data) => {
+    let today = new Date().toLocaleDateString()
+    console.log(today)
+    reportsModel.find({date:today},(err,data) => {
         if(!err){
             response.json(data);
         }else {
