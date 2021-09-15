@@ -9,7 +9,7 @@ let addCart = (request, response) => {
         {upsert : true},
         (err, result) => {
             if (!err) {
-                response.send("Added to cart");
+                response.json("Added to cart");
             } else {
                 console.send(err); 
             }
