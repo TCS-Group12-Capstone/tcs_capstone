@@ -7,12 +7,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-panel.component.css']
 })
 export class UserPanelComponent implements OnInit {
-  email:String="";
+  userName?:String;
   constructor(public activateRouter:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
-    this.activateRouter.params.subscribe(data => this.email = data.user);
+    this.activateRouter.params.subscribe(data => this.userName=data.email);
+    
   }
+  
   logout(){
     this.router.navigate(["/userSignIn"]);
   }

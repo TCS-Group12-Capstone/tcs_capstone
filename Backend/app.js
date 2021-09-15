@@ -29,6 +29,11 @@ app.use("/api/user",accountRouter);
 
 
 //http://localhost:1020/api/reports/getAllReports
+//http://localhost:1020/api/reports/getDailyReports
+//http://localhost:1020/api/reports/getWeeklyReports
+//http://localhost:1020/api/reports/getMonthlyReports
+//http://localhost:1020/api/reports/getProductReports
+//http://localhost:1020/api/reports/getCustomerReports
 app.use("/api/reports",reportsRouter);
 
 //http://localhost:1020/api/requests/send-requests
