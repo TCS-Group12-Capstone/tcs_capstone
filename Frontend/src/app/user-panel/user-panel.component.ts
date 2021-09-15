@@ -13,6 +13,7 @@ export class UserPanelComponent implements OnInit {
   ngOnInit(): void {
     this.activateRouter.params.subscribe(data => this.email = data.user);
   }
+  
   logout(){
     this.router.navigate(["/userSignIn"]);
   }
