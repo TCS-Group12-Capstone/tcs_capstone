@@ -13,4 +13,8 @@ export class CartService {
   addCart(product: Cart): Observable<any> {
     return this.http.post<any>("http://localhost:1020/api/cart/addCart", product);
   }
+
+  getCart(userId: string): Observable<Cart[]> {
+    return this.http.get<Cart[]>("http://localhost:1020/api/cart/getCart/" + userId);
+  }
 }
