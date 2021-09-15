@@ -9,6 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 import { SignInComponent } from './admin/signin/signin.component';
@@ -25,6 +29,10 @@ import { SendRequestComponent } from './send-request/send-request.component';
     AddEmployeeComponent,
     DeleteEmployeeComponent,
     GenerateReportComponent,
+    AdminPanelComponent,
+    UserPanelComponent,
+    UserSignUpComponent,
+    UserSignInComponent,
     EmployeePanelComponent,
     EditUserProfileComponent,
     SignInComponent,
@@ -34,6 +42,7 @@ import { SendRequestComponent } from './send-request/send-request.component';
     DisplayProductComponent,
     CartComponent,
     SendRequestComponent
+
   ],
   imports: [
     BrowserModule,

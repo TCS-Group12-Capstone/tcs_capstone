@@ -7,7 +7,7 @@ let addEmployee = async (request,response)=> {
     //console.log(employee);
     employee["type"]="employee"
     let empInfo = await accountModel.findOne({email:employee.email,type:"employee"});
-    console.log(empInfo);
+    //console.log(empInfo);
     if(empInfo == null){
         let result = await accountModel.insertMany(employee);
         response.send("Employee Account created successfully");
@@ -17,7 +17,7 @@ let addEmployee = async (request,response)=> {
 }
 
 let deleteEmployee = (request,response)=>{
-
+    
     let empEmail = request.params.empEmail;
 
     accountModel.deleteOne({email:empEmail,type:"employee"},(err,result)=>{
@@ -52,33 +52,16 @@ let signIn = async (request,response)=>{
     let user = request.body;
 
     let userInfo = await accountModel.findOne({email:user.email,password:user.password,type:"user"});
-    console.log(userInfo)
+    
     if(signInCount < 1){
         response.send("Account Locked");
     }else if(userInfo != null){
-        response.send("User Sign In successfully");
+        response.send("Success");
     }else{
-        
-        console.log(signInCount);
         response.send("Invalid user name or password you have "+ signInCount + " attempt");
         signInCount--;
     }
 }
 
 
-
-let getAllreports = (request,response)=> {
-
-    accountModel.find({},(err,data)=> {
-        if(!err){
-            response.json(data);
-        }else {
-             response.json(err);   
-        }
-    })
-
-}
-
-
-
-module.exports={addEmployee,deleteEmployee,getAllreports, signUp,signIn}
+module.exports={addEmployee,deleteEmployee, signUp,signIn}
