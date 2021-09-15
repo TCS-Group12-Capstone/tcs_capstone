@@ -19,9 +19,9 @@ import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
-  { path:" userpanel/:email",component:UserPanelComponent},
-  { path:" userSignUp",component:UserSignUpComponent},
-  { path:" userSignIn",component:UserSignInComponent},
+  { path: "userpanel/:email",component:UserPanelComponent},
+  { path: "userSignUp",component:UserSignUpComponent},
+  { path: "userSignIn",component:UserSignInComponent},
   { path: "adminSignIn", component: SignInComponent },
   { path: "employeeSignIn", component: EmployeeSigninComponent },
   { path: "employeePanel", component: EmployeePanelComponent },

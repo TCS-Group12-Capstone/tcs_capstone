@@ -32,7 +32,7 @@ import { SendRequestComponent } from './send-request/send-request.component';
     AdminPanelComponent,
     UserPanelComponent,
     UserSignUpComponent,
-    UserSignInComponent
+    UserSignInComponent,
     EmployeePanelComponent,
     EditUserProfileComponent,
     SignInComponent,
