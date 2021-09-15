@@ -7,7 +7,7 @@ let addEmployee = async (request,response)=> {
     //console.log(employee);
     employee["type"]="employee"
     let empInfo = await accountModel.findOne({email:employee.email,type:"employee"});
-    console.log(empInfo);
+    //console.log(empInfo);
     if(empInfo == null){
         let result = await accountModel.insertMany(employee);
         response.send("Employee Account created successfully");
