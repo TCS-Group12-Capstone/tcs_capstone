@@ -1,17 +1,22 @@
 <div class="container">
-    <label>Cart Size:</label>
-    <label id="cartSize">0</label>
+    <div class="row">
+        <div class="col floatRight">
+            <label>Cart Size:</label>
+            <label id="cartSize">0</label>
+            <input type="button" class="btn btn-success" (click)="goToCart()" value="Go to Cart">
+        </div>
+    </div>
 
-    <input type="button" class="btn btn-success" (click)="goToCart()" value="Go to Cart">
-
-    <div *ngFor="let product of products">
-        <div class="card" style="width: 10rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{product.name}}</h5>
-                <h6 class="card-subtitle mb-2">${{product.price}}</h6>
-                <h6 class="card-subtitle mb-2">In-stock: {{product.quantity}}</h6>
-                <input type="button" value="Add" class="btn btn-primary" (click)="addProductToCart(product)">
+    <div class="row">
+        <div *ngFor="let product of products" class="col-3">
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <h6 class="card-subtitle mb-2">${{product.price}}</h6>
+                    <h6 class="card-subtitle mb-2">In-stock: {{product.quantity}}</h6>
+                    <input type="button" value="Add" class="btn btn-primary" (click)="addProductToCart(product)">
+                </div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
