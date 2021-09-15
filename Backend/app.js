@@ -33,7 +33,9 @@ app.use("/api/requests", requestRouter);
 app.use("/api/product", productRouter);
 
 //http://localhost:1020/api/cart/addCart
-//http://localhost:1020/api/cart/getCart/userId
+//http://localhost:1020/api/cart/getCart/<userId>
+//http://localhost:1020/api/cart/deleteCart
+//http://localhost:1020/api/cart/decrementCart/<product>
 app.use("/api/cart", cartRouter);
 
 app.listen(1020, () => console.log("Server running on port number 1020"))

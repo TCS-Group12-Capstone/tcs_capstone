@@ -30,6 +30,22 @@ let getCart = (request, response) => {
     })
 }
 
+let deleteCart = (request, response) => {
+    let product = request.body;
+    console.log(product);
+
+    cartModel.deleteOne(
+        {$and : [{userId : product.userId}, {productId : product.productId}]},
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
 let decrementCart = (request, response) => {
     let product = request.body;
 
@@ -46,4 +62,4 @@ let decrementCart = (request, response) => {
     )
 }
 
-module.exports = {addCart, getCart, decrementCart};
+module.exports = {addCart, getCart, decrementCart, deleteCart};

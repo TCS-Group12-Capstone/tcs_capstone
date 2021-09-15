@@ -66,7 +66,7 @@ export class CartComponent implements OnInit {
     let i = 0;
     let tempTotal = 0;  // this local variable used when user delete a product
 
-    this.subtotal = []; // delete old data
+    this.subtotal = []; // delete old data, the new push will trigger Angular to redraw the table
 
     this.cart.forEach(product => {
       let productSubtotal = product.quantity * this.productDetail[i++].price;
@@ -82,15 +82,21 @@ export class CartComponent implements OnInit {
     this.router.navigate(["checkout"]);
   }
 
-  deleteProductFromCart(product: Cart) {
-    // if we only one product of this type, then delete the document from the database
+  deleteProductFromCart(product: Cart, i: number) {
     if (product.quantity == 1) {
+      // remove the product out of the array
+      this.cart.splice(i, 1);
+      this.subtotal.splice(i, 1);
 
-      console.log("This is the last product: " + product.productId);
+      // if we only one product of this type, then delete the document from the database
+      this.cartService.deleteCart(product).subscribe(
+        result => console.log(result),
+        error =>console.log(error)
+      )
     } else { 
       product.quantity -= 1;
 
-      // just decrement the qunatity by one
+      // just decrement the quantity by one
       this.cartService.decrementCart(
         new Cart(this.user, product.productId, -1)
       ).subscribe(
