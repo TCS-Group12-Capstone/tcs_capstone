@@ -18,4 +18,12 @@ export class EmployeeService {
   sentRequests(request: Request): Observable<any> {
     return this.http.post("http://localhost:1020/api/requests/send-requests", request);
   }
+
+  updateProfile(user: any): Observable<any> {
+    return this.http.put("http://localhost:1020/api/employee/update", user);
+  }
+
+  getProfile(): Observable<any> {
+    return this.http.post("http://localhost:1020/api/employee/profile", {});
+  }
 }
