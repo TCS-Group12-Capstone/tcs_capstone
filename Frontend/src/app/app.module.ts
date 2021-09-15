@@ -5,10 +5,14 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 import { SignInComponent } from './admin/signin/signin.component';
@@ -19,6 +23,9 @@ import { DisplayProductComponent } from './display-product/display-product.compo
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-employee-profile.component';
+import { UserFundsComponent } from './user-funds/user-funds.component';
+import { OrderStatusComponent } from './order-status/order-status.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +33,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AddEmployeeComponent,
     DeleteEmployeeComponent,
     GenerateReportComponent,
+    AdminPanelComponent,
+    UserPanelComponent,
+    UserSignUpComponent,
+    UserSignInComponent,
     EmployeePanelComponent,
     EditUserProfileComponent,
     SignInComponent,
@@ -35,14 +46,18 @@ import { CheckoutComponent } from './checkout/checkout.component';
     DisplayProductComponent,
     CartComponent,
     SendRequestComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    EditEmployeeProfileComponent,
+    UserFundsComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
