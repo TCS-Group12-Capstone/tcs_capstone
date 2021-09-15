@@ -4,6 +4,7 @@ let cors = require("cors")
 let bodyParser = require("body-parser")
 let accountRouter = require("./router/account.router");
 let productRouter = require("./router/product.router");
+let cartRouter = require("./router/cart.router");
 
 let app = express();
 
@@ -29,6 +30,9 @@ app.use("/api/user",accountRouter);
 
 //http://localhost:1020/api/product/getAllProducts
 app.use("/api/product",productRouter);
+
+//http://localhost:1020/api/cart/addCart
+app.use("/api/cart",cartRouter);
 
 app.listen(1020,()=>console.log("Server running on port number 1020"))
 
