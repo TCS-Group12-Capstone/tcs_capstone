@@ -16,4 +16,18 @@ let addCart = (request, response) => {
     })
 }
 
-module.exports = {addCart};
+let getCart = (request, response) => {
+    let user = request.params.userId;
+
+    cartModel.find(
+        {userId : user},    // filter by userId
+        (result, err) => {
+            if (!err) {
+                response.json(result);
+            } else {
+                response.json(err);
+            }
+    })
+}
+
+module.exports = {addCart, getCart};

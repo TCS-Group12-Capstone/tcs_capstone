@@ -12,6 +12,8 @@ import { ProductService } from '../services/product.service';
 })
 export class DisplayProductComponent implements OnInit {
 
+  cartSize: number = 0;
+  cart: Array<Cart> = [];
   products: Array<Product> = [];
 
   constructor(
@@ -25,6 +27,16 @@ export class DisplayProductComponent implements OnInit {
       result => {this.products = result},
       error => console.log(error)
     )
+    this.cartService.getCart("123").subscribe(
+      result => {this.showCartSize(result)},
+      error => console.log()
+    )
+  }
+
+  showCartSize(result: Cart[]) {
+    result.forEach(product => {
+      this.cartSize += product.quantity;
+    })
   }
 
   addProductToCart(product: Product) {

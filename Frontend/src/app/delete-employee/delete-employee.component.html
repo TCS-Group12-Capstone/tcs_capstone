@@ -1,11 +1,13 @@
 <div>
     <h2>Delete Employee</h2>
-    <form>
+    <form [formGroup]="deleteRef" (ngSubmit)="deleteEmp()">
         <label>Employee Email Id</label>
         <input type="text" formControlName="email"/><br/>
         <input type="submit" value="Delete Employee"/>
         <input type="reset" value="reset"/>
     </form>
     <br>
-    <!-- <a routerLink="/adminPanel">Main Page</a> --> 
+    {{msg}}
+    <br>
+    <a routerLink="/">Main Page</a> 
 </div>
