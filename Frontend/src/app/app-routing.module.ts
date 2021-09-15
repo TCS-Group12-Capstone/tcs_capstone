@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: "generateReport", component: GenerateReportComponent },
   { path: "SendRequest", component: SendRequestComponent },
   { path: "displayProducts", component: DisplayProductComponent},
-  { path: "cart", component: CartComponent},
+  { path: "cart/:user", component: CartComponent},
   { path: "checkout", component: CheckoutComponent}
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];

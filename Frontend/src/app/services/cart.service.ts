@@ -17,4 +17,8 @@ export class CartService {
   getCart(userId: string): Observable<Cart[]> {
     return this.http.get<Cart[]>("http://localhost:1020/api/cart/getCart/" + userId);
   }
+
+  decrementCart(product: Cart): Observable<any> {
+    return this.http.patch<any>("http://localhost:1020/api/cart/decrementCart", product);
+  }
 }

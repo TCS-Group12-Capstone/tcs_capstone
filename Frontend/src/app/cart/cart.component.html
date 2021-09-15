@@ -4,6 +4,7 @@
             <th scope="col">Product</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Operation</th>
             <th scope="col">Subtotal</th>
         </tr>
     </thead>
@@ -12,10 +13,11 @@
             <td>{{productDetail[i].name}}</td>
             <td>${{productDetail[i].price}}</td>
             <td>{{product.quantity}}</td>
+            <td><input type="button" class="btn btn-danger" value="Delete" (click)="deleteProductFromCart(product)"></td>
             <td>${{subtotal[i]}}</td>
         </tr>
         <tr>
-            <th colspan="3">Total</th>
+            <th colspan="4">Total</th>
             <th>${{total}}</th>
         </tr>
     </tbody>

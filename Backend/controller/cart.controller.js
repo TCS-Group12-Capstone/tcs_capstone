@@ -30,4 +30,20 @@ let getCart = (request, response) => {
     })
 }
 
-module.exports = {addCart, getCart};
+let decrementCart = (request, response) => {
+    let product = request.body;
+
+    cartModel.updateOne(
+        {$and : [{userId : product.userId}, {productId : product.productId}]},
+        {$inc : {quantity : product.quantity}},
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+module.exports = {addCart, getCart, decrementCart};
