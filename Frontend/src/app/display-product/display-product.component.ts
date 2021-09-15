@@ -48,12 +48,12 @@ export class DisplayProductComponent implements OnInit {
   addProductToCart(product: Product) {
     let selectedProduct = new Cart(this.user, product._id, 1);
 
+    this.cartSize += selectedProduct.quantity;
+
     this.cartService.addCart(selectedProduct).subscribe(
       result => console.log(result),
       error => console.log(error)
     )
-
-    this.updateCartSize();
   }
 
   goToCart() {

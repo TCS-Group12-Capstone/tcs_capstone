@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   productDetail: Array<Product> = [];
   subtotal: Array<number> = [];
   total: number = 0.00;
+  showTable: boolean = true;
 
   constructor(
     public cartService: CartService,
@@ -53,19 +54,22 @@ export class CartComponent implements OnInit {
     })
 
     this.productService.getProducts(products).subscribe(
-      result => this.calSubTotal(result),
+      result => {
+        this.productDetail = result;
+        this.calSubtotal();
+      },
       error => console.log(error)
     )
   }
 
-  calSubTotal(result: Product[]) {
+  calSubtotal() {
     let i = 0;
     let tempTotal = 0;  // this local variable used when user delete a product
 
-    this.productDetail = result;
+    this.subtotal = []; // delete old data
 
     this.cart.forEach(product => {
-      let productSubtotal = product.quantity * this.productDetail[i].price;
+      let productSubtotal = product.quantity * this.productDetail[i++].price;
 
       this.subtotal.push(productSubtotal);
       tempTotal += productSubtotal;
@@ -81,8 +85,11 @@ export class CartComponent implements OnInit {
   deleteProductFromCart(product: Cart) {
     // if we only one product of this type, then delete the document from the database
     if (product.quantity == 1) {
+
       console.log("This is the last product: " + product.productId);
     } else { 
+      product.quantity -= 1;
+
       // just decrement the qunatity by one
       this.cartService.decrementCart(
         new Cart(this.user, product.productId, -1)
@@ -92,7 +99,7 @@ export class CartComponent implements OnInit {
       )
     }
 
-    this.updateCartTable();
+    this.calSubtotal();
   }
 
 }
