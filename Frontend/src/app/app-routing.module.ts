@@ -18,6 +18,7 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { UserFundsComponent } from './user-funds/user-funds.component';
+import { OrderStatusComponent } from './order-status/order-status.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: "profileEdit", component: EditEmployeeProfileComponent},
   { path: "editUserProfile", component: EditUserProfileComponent},
   { path: "userFunds", component: UserFundsComponent},
+  { path: "orderStatus", component: OrderStatusComponent},
   { path: "adminPanel", component: AdminPanelComponent}
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];

@@ -25,4 +25,7 @@ export class UserPanelComponent implements OnInit {
   cart(){
     //this.router.navigate(["/userSignIn"]);
   }
+  orderStatus(){
+    this.router.navigate(["/orderStatus"]);
+  }
 }
