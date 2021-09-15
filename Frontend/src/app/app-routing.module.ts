@@ -30,7 +30,9 @@ const routes: Routes = [
   { path: "generateReport", component: GenerateReportComponent },
   { path: "SendRequest", component: SendRequestComponent },
   { path: "displayProducts", component: DisplayProductComponent},
-  { path: "cart", component: CartComponent}
+  { path: "cart", component: CartComponent},
+  { path: "adminPanel", component: AdminPanelComponent}
+
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];
 
