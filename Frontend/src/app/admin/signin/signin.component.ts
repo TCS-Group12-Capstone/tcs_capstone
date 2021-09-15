@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserRole, UsersService } from 'src/app/user.service';
-import { MatSnackBar } from "@angular/material/snack-bar";
+//import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
 	selector: 'app-signin',
@@ -20,7 +20,7 @@ export class SignInComponent implements OnInit {
 		private fb: FormBuilder,
 		private router: Router,
 		private usersService: UsersService,
-		private _snackBar: MatSnackBar
+		//private _snackBar: MatSnackBar
 	) { }
 
 	ngOnInit(): void { }
@@ -45,7 +45,7 @@ export class SignInComponent implements OnInit {
 				.subscribe(({ userId }) => {
 					if (userId === undefined) {
 						console.log("wrong username / password");
-						this._snackBar.open("Wrong Username or Password!", undefined, { duration: 3000 });
+						//this._snackBar.open("Wrong Username or Password!", undefined, { duration: 3000 });
 					} else {
 						console.log(`logged in as userId: ${userId}`);
 						localStorage.setItem("userid", userId.toString());

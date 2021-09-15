@@ -1,22 +1,25 @@
-<h2>Employee Panel</h2>
-<a routerLink="/SendRequest">
-    <button style="width:140px"> Send Request </button>
-</a>
-<!-- <a routerLink="/UpdateOrderStatus"> -->
-<button style="width:140px"> Update Order Status </button>
-<!-- </a> -->
-
-<br /><br />
-
-<!-- <a routerLink="/UnlockUsers"> -->
-<button style="width:140px"> Unlock Users</button>
-<!-- </a> -->
-<!-- <a routerLink="/EditProfile"> -->
-<button style="width:140px"> Edit Profile</button>
-<!-- </a> -->
-
-<br /><br />
-
-<a routerLink="">
-    <button style="width:280px"> Logout</button>
-</a>
+<div style="height:100vh">
+    <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+        <div class="card bg-dark col-4">
+            <div class="card-body" style="text-align: center;">
+                <h4 class="card-title" style="text-align: center;">Employee Panel</h4><br />
+                <a routerLink="/SendRequest">
+                    <button class="btn btn-info col-5 mr-2"> Send Request </button>
+                </a>
+                <!-- <a routerLink="/UpdateOrderStatus"> -->
+                <button class="btn btn-info col-5 mr-2"> Update Order Status </button>
+                <!-- </a> -->
+                <br /><br />
+                <!-- <a routerLink="/UnlockUsers"> -->
+                <button class="btn btn-info col-5 mr-2"> Unlock Users</button>
+                <!-- </a> -->
+                <a routerLink="/profileEdit">
+                    <button class="btn btn-info col-5 mr-2"> Edit Profile</button>
+                </a>
+                <br /><br />
+                <a routerLink="">
+                    <button class="btn btn-info col-5"> Logout</button>
+                </a>
+            </div>
+        </div>
+    </div>
