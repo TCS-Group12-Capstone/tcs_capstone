@@ -11,7 +11,7 @@ let addCart = (request, response) => {
             if (!err) {
                 response.json("Added to cart");
             } else {
-                console.send(err); 
+                console.json(err); 
             }
     })
 }
