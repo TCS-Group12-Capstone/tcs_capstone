@@ -19,6 +19,7 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
+import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: "SendRequest", component: SendRequestComponent },
   { path: "displayProducts", component: DisplayProductComponent},
   { path: "cart/:user", component: CartComponent},
-  { path: "checkout", component: CheckoutComponent}
+  { path: "checkout", component: CheckoutComponent},
   { path: "displayProducts", component: DisplayProductComponent },
   { path: "profileEdit", component: EditEmployeeProfileComponent},
   { path: "editUserProfile", component: EditUserProfileComponent},
