@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminSigninComponent } from './admin-signin.component';
+import { SendRequestComponent } from './send-request.component';
 
-describe('AdminSigninComponent', () => {
-  let component: AdminSigninComponent;
-  let fixture: ComponentFixture<AdminSigninComponent>;
+describe('SendRequestComponent', () => {
+  let component: SendRequestComponent;
+  let fixture: ComponentFixture<SendRequestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminSigninComponent ]
+      declarations: [ SendRequestComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminSigninComponent);
+    fixture = TestBed.createComponent(SendRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

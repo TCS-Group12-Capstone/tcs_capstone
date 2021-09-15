@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,12 +11,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
-import { AdminSigninComponent } from './admin-signin/admin-signin.component';
+import { SignInComponent } from './admin/signin/signin.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
+import { SendRequestComponent } from './send-request/send-request.component';
 
 @NgModule({
   declarations: [
@@ -25,17 +27,19 @@ import { CartComponent } from './cart/cart.component';
     GenerateReportComponent,
     EmployeePanelComponent,
     EditUserProfileComponent,
-    AdminSigninComponent,
+    SignInComponent,
     UserSigninComponent,
     EmployeeSigninComponent,
     LandingPageComponent,
     DisplayProductComponent,
-    CartComponent
+    CartComponent,
+    SendRequestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    RouterModule,
     HttpClientModule
   ],
   providers: [],
