@@ -37,6 +37,20 @@ export class EmployeeService {
     {responseType:'text'});
   }
 
+  getDailyReport():Observable<any>{
+    return this.http.get("http://localhost:1020/api/reports/getDailyReports");
+   }
 
+   getMonthlyReport():Observable<any>{
+    return this.http.get("http://localhost:1020/api/reports/getMonthlyReports");
+   }
+
+   getWeeklyReport():Observable<any>{
+    return this.http.get("http://localhost:1020/api/reports/getWeeklyReports");
+   }
+
+   getItemReport(itemId:Number):Observable<any>{
+    return this.http.post("http://localhost:1020/api/reports/getProductReports",itemId);
+   }
 
 }
