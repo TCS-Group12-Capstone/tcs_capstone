@@ -18,6 +18,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SendRequestComponent } from './send-request/send-request.component';
     LandingPageComponent,
     DisplayProductComponent,
     CartComponent,
-    SendRequestComponent
+    SendRequestComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

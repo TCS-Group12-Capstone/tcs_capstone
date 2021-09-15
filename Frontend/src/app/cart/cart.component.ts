@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart } from '../classes/cart';
 import { Product } from '../classes/product';
 import { CartService } from '../services/cart.service';
@@ -18,7 +19,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     public cartService: CartService,
-    public productService: ProductService
+    public productService: ProductService,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
@@ -54,6 +56,10 @@ export class CartComponent implements OnInit {
       this.subtotal.push(productSubtotal);
       this.total += productSubtotal;
     })
+  }
+
+  checkout() {
+    this.router.navigate(["checkout"]);
   }
 
 }

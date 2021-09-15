@@ -11,6 +11,7 @@ import { GenerateReportComponent } from './generate-report/generate-report.compo
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: "generateReport", component: GenerateReportComponent },
   { path: "SendRequest", component: SendRequestComponent },
   { path: "displayProducts", component: DisplayProductComponent},
-  { path: "cart", component: CartComponent}
+  { path: "cart", component: CartComponent},
+  { path: "checkout", component: CheckoutComponent}
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];
 

@@ -23,8 +23,8 @@ export class DisplayProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.productService.getProducts([]).subscribe(
-      result => {this.products = result},
+    this.productService.getAllProducts().subscribe(
+      result => this.products = result,
       error => console.log(error)
     )
     this.cartService.getCart("123").subscribe(
