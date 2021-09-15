@@ -64,19 +64,4 @@ let signIn = async (request,response)=>{
 }
 
 
-
-let getAllreports = (request,response)=> {
-
-    accountModel.find({},(err,data)=> {
-        if(!err){
-            response.json(data);
-        }else {
-             response.json(err);   
-        }
-    })
-
-}
-
-
-
-module.exports={addEmployee,deleteEmployee,getAllreports, signUp,signIn}
+module.exports={addEmployee,deleteEmployee, signUp,signIn}
