@@ -29,12 +29,8 @@ export class DisplayProductComponent implements OnInit {
       error => console.log(error)
     )
 
-    this.updateCartSize();
-  }
-
-  updateCartSize() {
     this.cartService.getCart(this.user).subscribe(
-      result => {this.showCartSize(result)},
+      result => this.showCartSize(result),
       error => console.log()
     )
   }

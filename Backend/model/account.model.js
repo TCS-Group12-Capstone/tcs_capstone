@@ -10,7 +10,9 @@ let accountSchema = mongoose.Schema({
     DOB:{type:String},
     phone:{type:Number},
     address:{type:String},
-    type:{type:String}
+    type:{type:String},
+    fund:{type:String},
+    lock:{type:String}
 });
 
 let accountModel = mongoose.model("Account",accountSchema);

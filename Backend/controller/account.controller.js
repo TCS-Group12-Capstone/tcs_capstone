@@ -112,4 +112,20 @@ let getProfile = (request, response) => {
     })
 }
 
-module.exports = { addEmployee, deleteEmployee, signUp, signIn, updateProfile, getProfile ,empSignIn }
+let getFund = (request, response) => {
+    let user = request.params.userId;
+
+    accountModel.findOne(
+        {email : user},
+        {fund : 1}, // return the field "fund" (and the field _id as a bonus)
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+module.exports = { addEmployee, deleteEmployee, signUp, signIn, updateProfile, getProfile , empSignIn, getFund }

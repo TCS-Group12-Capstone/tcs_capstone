@@ -14,7 +14,7 @@ router.post("/signIn", accountController.signIn);
 
 router.post("/empSignIn",accountController.empSignIn);
 
-
+router.get("/getFund/:userId", accountController.getFund);
 
 module.exports = router;
 

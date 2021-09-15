@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: "SendRequest", component: SendRequestComponent },
   { path: "displayProducts", component: DisplayProductComponent},
   { path: "cart/:user", component: CartComponent},
-  { path: "checkout", component: CheckoutComponent},
+  { path: "checkout/:user", component: CheckoutComponent},
   { path: "displayProducts", component: DisplayProductComponent },
   { path: "profileEdit", component: EditEmployeeProfileComponent},
   { path: "editUserProfile", component: EditUserProfileComponent},

@@ -12,12 +12,11 @@ import { ProductService } from '../services/product.service';
 })
 export class CartComponent implements OnInit {
 
-  user: string = "no user available";
+  user: string = "failed to get username";
   cart: Array<Cart> = [];
   productDetail: Array<Product> = [];
   subtotal: Array<number> = [];
   total: number = 0.00;
-  showTable: boolean = true;
 
   constructor(
     public cartService: CartService,
@@ -28,7 +27,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
-      // get the username
       data => {
         this.user = data.user;
         this.updateCartTable();
@@ -36,7 +34,6 @@ export class CartComponent implements OnInit {
   }
 
   updateCartTable() {
-    // get the cart of the user
     this.cartService.getCart(this.user).subscribe(
       result => this.retrieveProductsDetail(result),
       error => console.log(error)
@@ -79,12 +76,13 @@ export class CartComponent implements OnInit {
   }
 
   checkout() {
-    this.router.navigate(["checkout"]);
+    this.router.navigate(["checkout", this.user]);
   }
 
   deleteProductFromCart(product: Cart, i: number) {
     if (product.quantity == 1) {
       // remove the product out of the array
+      this.productDetail.splice(i, 1);
       this.cart.splice(i, 1);
       this.subtotal.splice(i, 1);
 
