@@ -13,7 +13,9 @@ export class EditUserProfileComponent implements OnInit {
     email:new FormControl(),
     password:new FormControl()
   })
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }

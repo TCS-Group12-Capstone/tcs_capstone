@@ -6,13 +6,13 @@
             <h4 class="card-title" style="text-align: center;">Update User Info</h4>
 
             <form [formGroup]="userProfileRef" (ngSubmit)="updateUserInfo()">
-                <!-- <label>Address: </label> -->
-                <input class="form-control mb-2 mr-sm-2" type="text" value="current address placeholder" formControlName="address"/><br/>
-                <!-- <label>Phone Number: </label> -->
-                <input class="form-control mb-2 mr-sm-2" type="text" value="current phone# placeholder" formControlName="phone"/><br/>
-                <!-- <label>Email ID: </label> -->
-                <input class="form-control mb-2 mr-sm-2" type="text" value="current email placeholder" formControlName="email"/><br/>
-                <!-- <label>New Password: </label> -->
+                <label>Address: </label>
+                <input class="form-control mb-2 mr-sm-2" type="text" formControlName="address"/><br/>
+                <label>Phone Number: </label>
+                <input class="form-control mb-2 mr-sm-2" type="text" formControlName="phone"/><br/>
+                <label>Email ID: </label>
+                <input class="form-control mb-2 mr-sm-2" type="text" formControlName="email"/><br/>
+                <label>New Password: </label>
                 <input class="form-control mb-2 mr-sm-2" type="password" placeholder="New Password" formControlName="password"/><br/>
                 <button class="btn btn-info col-12" type="submit" >Update</button>
             </form>
