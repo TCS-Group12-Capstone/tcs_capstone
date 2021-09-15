@@ -2,28 +2,31 @@
 const { request, response } = require("express");
 let accountModel = require("../model/account.model");
 
-let addEmployee = async (request,response)=> {
+let addEmployee = async (request, response) => {
     let employee = request.body;    // receive the data from post method
     //console.log(employee);
-    employee["type"]="employee"
-    let empInfo = await accountModel.findOne({email:employee.email,type:"employee"});
-    //console.log(empInfo);
-    if(empInfo == null){
+
+    employee["type"] = "employee"
+    let empInfo = await accountModel.findOne({ email: employee.email, type: "employee" });
+    console.log(empInfo);
+    if (empInfo == null) {
+
         let result = await accountModel.insertMany(employee);
         response.send("Employee Account created successfully");
-    }else {
+    } else {
         response.send("Email Id must be unqiue");
-    }    
+    }
 }
+
 
 let deleteEmployee = (request,response)=>{
     
     let empEmail = request.params.empEmail;
 
-    accountModel.deleteOne({email:empEmail,type:"employee"},(err,result)=>{
-        if(!err){
+    accountModel.deleteOne({ email: empEmail, type: "employee" }, (err, result) => {
+        if (!err) {
             response.send(result)
-        }else{
+        } else {
             response.send(err)
         }
     })
@@ -31,25 +34,26 @@ let deleteEmployee = (request,response)=>{
 }
 
 
-let signUp = async (request,response)=>{
+let signUp = async (request, response) => {
     let user = request.body;
-    user["type"]="user"
-    let userExists = await accountModel.findOne({email:user.email,type:"user"});
+    user["type"] = "user"
+    let userExists = await accountModel.findOne({ email: user.email, type: "user" });
     console.log(userExists);
-    if(userExists == null){
+    if (userExists == null) {
         let result = await accountModel.insertMany(user)
         response.send("User Account created successfully");
-    }else {
+    } else {
         response.send("User with Email Exists");
-    } 
+    }
 }
 
 
 
 var signInCount = 3;
 
-let signIn = async (request,response)=>{
+let signIn = async (request, response) => {
     let user = request.body;
+
 
     let userInfo = await accountModel.findOne({email:user.email,password:user.password,type:"user"});
     
@@ -59,9 +63,43 @@ let signIn = async (request,response)=>{
         response.send("Success");
     }else{
         response.send("Invalid user name or password you have "+ signInCount + " attempt");
+
         signInCount--;
     }
 }
 
+let updateProfile = async (request, response) => {
 
-module.exports={addEmployee,deleteEmployee, signUp,signIn}
+    let empEmail = request.body;
+
+    accountModel.updateOne({ fname: empEmail.fname }, { $set: { password: empEmail.password } }, (err, result) => {
+        if (!err) {
+            response.send({
+                result,
+                "message": "password has been updated successfully"
+            })
+        } else {
+            response.send(err)
+        }
+    })
+}
+
+let getProfile = (request, response) => {
+    let empfname = request.body;
+
+    empfname["type"] = "employee"
+    accountModel.findOne({ id: empfname._id, type: "employee" }, (err, data) => {
+        if (err) {
+            response.status(403).json({ "error": err });
+        }
+        else {
+            response.json({
+                "status": "success",
+                "profile": data
+            })
+        }
+    })
+}
+
+module.exports = { addEmployee, deleteEmployee, signUp, signIn, updateProfile, getProfile }
+
