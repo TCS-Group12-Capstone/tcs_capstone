@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of cart; let i = index">
+            <td>{{productDetail[i].name}}</td>
+            <td>${{productDetail[i].price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>${{subtotal[i]}}</td>
+        </tr>
+        <tr>
+            <th colspan="3">Total</th>
+            <th>${{total}}</th>
+        </tr>
+    </tbody>
+</table>

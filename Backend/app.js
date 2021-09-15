@@ -29,7 +29,7 @@ app.use("/api/user", accountRouter);
 //http://localhost:1020/api/requests/send-requests
 app.use("/api/requests", requestRouter);
 
-//http://localhost:1020/api/product/getAllProducts
+//http://localhost:1020/api/product/getProducts
 app.use("/api/product", productRouter);
 
 //http://localhost:1020/api/cart/addCart

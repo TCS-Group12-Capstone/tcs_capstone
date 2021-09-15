@@ -23,7 +23,7 @@ export class DisplayProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(
+    this.productService.getProducts([]).subscribe(
       result => {this.products = result},
       error => console.log(error)
     )
