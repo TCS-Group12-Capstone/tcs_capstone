@@ -11,5 +11,16 @@ export class GenerateReportComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  dailyReport(){
+
+  }
+
+  weeklyReport(){
+
+  }
+
+  monthlyReport(){
+
+  }
 
 }

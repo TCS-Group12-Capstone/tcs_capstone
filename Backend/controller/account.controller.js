@@ -17,7 +17,7 @@ let addEmployee = async (request,response)=> {
 }
 
 let deleteEmployee = (request,response)=>{
-
+    
     let empEmail = request.params.empEmail;
 
     accountModel.deleteOne({email:empEmail,type:"employee"},(err,result)=>{
@@ -52,14 +52,12 @@ let signIn = async (request,response)=>{
     let user = request.body;
 
     let userInfo = await accountModel.findOne({email:user.email,password:user.password,type:"user"});
-    console.log(userInfo)
+    
     if(signInCount < 1){
         response.send("Account Locked");
     }else if(userInfo != null){
-        response.send("User Sign In successfully");
+        response.send("Success");
     }else{
-        
-        console.log(signInCount);
         response.send("Invalid user name or password you have "+ signInCount + " attempt");
         signInCount--;
     }

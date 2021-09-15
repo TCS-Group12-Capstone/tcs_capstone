@@ -1,0 +1,23 @@
+<div>
+    <h2>Log In Page</h2>
+    <form [formGroup]="signInRef" (ngSubmit)="checkUser()">
+        
+        <label>Email </label>
+        <input type="text" formControlName="email"/><br/>
+        <label>Password </label>
+        <input type="text" formControlName="password"/><br/>
+        
+        <input type="submit" value="Sign In"/>
+        <input type="reset" value="reset"/>
+    </form>
+
+    <br/>
+    {{msg}}
+    <br>
+
+    <a routerLink="/">Login Page</a> |
+    <a routerLink="/signUp">SignUp Page</a> |
+    <input type="button" value="Raise Ticket"
+    (click)="raiseTicket()"/>
+</div>
+
