@@ -12,10 +12,10 @@ import { GenerateReportComponent } from './generate-report/generate-report.compo
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
+import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-employee-profile.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
-
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -29,10 +29,10 @@ const routes: Routes = [
   { path: "deleteEmployee", component: DeleteEmployeeComponent },
   { path: "generateReport", component: GenerateReportComponent },
   { path: "SendRequest", component: SendRequestComponent },
-  { path: "displayProducts", component: DisplayProductComponent},
-  { path: "cart", component: CartComponent},
+  { path: "displayProducts", component: DisplayProductComponent },
+  { path: "cart", component: CartComponent },
+  { path: "profileEdit", component: EditEmployeeProfileComponent }
   { path: "adminPanel", component: AdminPanelComponent}
-
   //{path:"", redirectTo:"addEmployee",pathMatch:"prefix"}
 ];
 

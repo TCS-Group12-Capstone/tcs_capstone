@@ -20,6 +20,15 @@ export class EmployeeService {
     return this.http.post("http://localhost:1020/api/requests/send-requests", request);
   }
 
+
+  updateProfile(user: any): Observable<any> {
+    return this.http.put("http://localhost:1020/api/employee/update", user);
+  }
+
+  getProfile(): Observable<any> {
+    return this.http.post("http://localhost:1020/api/employee/profile", {});
+  }
+
   empAccountDelete(empEmail:String):Observable<any>{
     console.log(empEmail)
     //empEmail = JSON.stringify(empEmail)
@@ -36,11 +45,9 @@ export class EmployeeService {
     return this.http.post("http://localhost:1020/api/user/signIn",userInfo,
     {responseType:'text'});
   }
-
   empSignIn(userInfo:Employee):Observable<any>{
     return this.http.post("http://localhost:1020/api/user/empSignIn",userInfo,
     {responseType:'text'});
   }
-
 
 }
