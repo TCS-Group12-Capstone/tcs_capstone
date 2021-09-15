@@ -22,6 +22,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-employee-profile.component';
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
@@ -45,6 +46,7 @@ import { OrderStatusComponent } from './order-status/order-status.component';
     DisplayProductComponent,
     CartComponent,
     SendRequestComponent,
+    CheckoutComponent,
     EditEmployeeProfileComponent,
     UserFundsComponent,
     OrderStatusComponent
