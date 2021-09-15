@@ -27,7 +27,6 @@ export class EmployeeSigninComponent implements OnInit {
         if(result == "Success"){
           this.router.navigate(['employeePanel', employeeInfo.email]);
         }else{
-          console.log(result);
           this.msg=result;
         }
       }

@@ -4,8 +4,8 @@
         <div class="card-body">
             <h4 class="card-title" style="text-align: center;">Employee Sign In</h4>
             <form class="form-inline" [formGroup]="loginRef" (ngSubmit)="checkLogin()">
-                <input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email" required/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password" required/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password"/><br/>
                 <div style="text-align: center;">
                     <button class="btn btn-info" style="margin-inline: 10px;"type="submit">Login</button>
                     <button class="btn btn-info" type="reset">Reset</button>
