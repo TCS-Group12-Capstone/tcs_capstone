@@ -17,10 +17,10 @@ export class UserPanelComponent implements OnInit {
     this.router.navigate(["/userSignIn"]);
   }
   editProfile(){
-    //this.router.navigate(["/userSignIn"]);
+    this.router.navigate(["/editUserProfile"]);
   }
   funds(){
-    // this.router.navigate(["/userSignIn"]);
+    this.router.navigate(["/userFunds"]);
   }
   cart(){
     //this.router.navigate(["/userSignIn"]);

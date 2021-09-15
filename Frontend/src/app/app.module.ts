@@ -23,6 +23,8 @@ import { DisplayProductComponent } from './display-product/display-product.compo
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
 import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-employee-profile.component';
+import { UserFundsComponent } from './user-funds/user-funds.component';
+import { OrderStatusComponent } from './order-status/order-status.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-emplo
     DisplayProductComponent,
     CartComponent,
     SendRequestComponent,
-    EditEmployeeProfileComponent
+    EditEmployeeProfileComponent,
+    UserFundsComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,
