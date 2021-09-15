@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: "userSignIn",component:UserSignInComponent},
   { path: "adminSignIn", component: SignInComponent },
   { path: "employeeSignIn", component: EmployeeSigninComponent },
-  { path: "employeePanel", component: EmployeePanelComponent },
+  { path: "employeePanel/:email", component: EmployeePanelComponent },
   { path: "addEmployee", component: AddEmployeeComponent },
   { path: "deleteEmployee", component: DeleteEmployeeComponent },
   { path: "generateReport", component: GenerateReportComponent },

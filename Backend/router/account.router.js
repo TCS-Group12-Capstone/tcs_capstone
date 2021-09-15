@@ -12,6 +12,7 @@ router.post("/profile", accountController.getProfile);
 router.post("/signUp", accountController.signUp);
 router.post("/signIn", accountController.signIn);
 
+router.post("/empSignIn",accountController.empSignIn);
 
 
 
