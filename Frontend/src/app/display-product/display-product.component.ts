@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cart } from '../classes/cart';
 import { Product } from '../classes/product';
+import { CartService } from '../services/cart.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-display-product',
@@ -8,23 +12,32 @@ import { Product } from '../classes/product';
 })
 export class DisplayProductComponent implements OnInit {
 
-  products: Array<Product> = [
-    new Product("1", "Apple", 12.99, 10),
-    new Product("2", "Orange", 13.99, 10),
-    new Product("3", "Banana", 12.99, 0),
-  ];
+  products: Array<Product> = [];
 
-  constructor() { }
+  constructor(
+    public router: Router,
+    public productService: ProductService,
+    public cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+    this.productService.getAllProducts().subscribe(
+      result => {this.products = result},
+      error => console.log(error)
+    )
   }
 
   addProductToCart(product: Product) {
+    let selectedProduct = new Cart("123", product._id, 1);
 
+    this.cartService.addCart(selectedProduct).subscribe(
+      result => console.log(result),
+      error => console.log(error)
+    )
   }
 
   goToCart() {
-    
+    this.router.navigate(["cart"]);
   }
 
 }
