@@ -13,8 +13,8 @@ const routes: Routes = [
   {path:"deleteEmployee", component:DeleteEmployeeComponent},
   {path:"generateReport", component:GenerateReportComponent},
   {path:"userpanel/:email",component:UserPanelComponent},
-  {path:"signUp",component:UserSignUpComponent},
-  {path:"signIn",component:UserSignInComponent},
+  {path:"userSignUp",component:UserSignUpComponent},
+  {path:"userSignIn",component:UserSignInComponent},
   {path:"", component:AdminPanelComponent,pathMatch:"prefix"}
   //{path:"userpanel",component:UserPanelComponent},
 ];

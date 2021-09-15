@@ -14,15 +14,15 @@ export class UserPanelComponent implements OnInit {
     this.activateRouter.params.subscribe(data => this.email = data.user);
   }
   logout(){
-    this.router.navigate(["/signIn"]);
+    this.router.navigate(["/userSignIn"]);
   }
   editProfile(){
-    this.router.navigate(["/signIn"]);
+    //this.router.navigate(["/userSignIn"]);
   }
   funds(){
-    this.router.navigate(["/signIn"]);
+    // this.router.navigate(["/userSignIn"]);
   }
   cart(){
-    this.router.navigate(["/signIn"]);
+    //this.router.navigate(["/userSignIn"]);
   }
 }
