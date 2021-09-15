@@ -32,7 +32,6 @@ let getCart = (request, response) => {
 
 let deleteCart = (request, response) => {
     let product = request.body;
-    console.log(product);
 
     cartModel.deleteOne(
         {$and : [{userId : product.userId}, {productId : product.productId}]},
