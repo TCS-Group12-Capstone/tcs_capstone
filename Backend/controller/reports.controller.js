@@ -30,7 +30,7 @@ let getDailyReport = (request,response)=> {
 
 let getMonthlyReports = (request,response)=> {
 
-    reportsModel.find({date:{ $gte: new Date('2021/09/01') }},(err,data) => {
+    reportsModel.find({},(err,data) => {
         if(!err){
             response.json(data);
         }else {
@@ -42,11 +42,7 @@ let getMonthlyReports = (request,response)=> {
 
 let getWeeklyReports = (request,response)=> {
 
-    let d = new Date();
-    d.setDate(d.getDate() - 3);
-    // let week = d.toLocaleDateString();
-
-    reportsModel.find({date:{$gt:new Date(d)}},(err,data) => {
+    reportsModel.find({},(err,data) => {
         if(!err){
             response.json(data);
         }else {
@@ -58,7 +54,7 @@ let getWeeklyReports = (request,response)=> {
 
 
 let getCustomerReports = (request,response)=> {
-    let custId = request.body; 
+
     reportsModel.find({},(err,data) => {
         if(!err){
             response.json(data);
@@ -71,8 +67,8 @@ let getCustomerReports = (request,response)=> {
 
 
 let getProductReports = (request,response)=> {
-    let itmId = request.body;
-    reportsModel.find({itemId:1},(err,data) => {
+
+    reportsModel.find({},(err,data) => {
         if(!err){
             response.json(data);
         }else {

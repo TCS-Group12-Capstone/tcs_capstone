@@ -1,10 +1,10 @@
 <div>
     <h2>Delete Employee</h2>
     <form [formGroup]="deleteRef" (ngSubmit)="deleteEmp()">
-        <label>Employee Email</label>
+        <label>Employee Email Id</label>
         <input type="text" formControlName="email"/><br/>
-        <input type="Submit" value="Delete Employee"/>
-        <input type="Reset" value="reset"/>
+        <input type="submit" value="Delete Employee"/>
+        <input type="reset" value="reset"/>
     </form>
     <br>
     {{msg}}

@@ -6,68 +6,11 @@
     (click)="weeklyReport()"/> |
     <input type="button" value="Monthly Report"
     (click)="monthlyReport()"/> |
+    <input type="button" value="Product Report"
+    (click)="productReport()"/> |
+    <input type="button" value="Customer Report"
+    (click)="customerReport()"/>
     
-    <form [formGroup]="getIdRef" (ngSubmit)="productReport()">
-
-        <input type="text" formControlName="id" placeholder="Item Id">
-        <input type="submit" value="Product Report">
-        <!-- <input type="button" value="Product Report"
-        (click)="productReport()"/>      -->
-    </form>
-   
-    |
-    <form [formGroup]="getIdRef" (ngSubmit)="productReport()">
-
-        <input type="text" formControlName="id" placeholder="Customer Id">
-        <input type="submit" value="Customer Report">
-    </form>
-    <!-- <input type="button" value="Customer Report"
-    (click)="customerReport()"/> -->
-    <hr>
-    <div *ngIf="daily">
-        <table border="1" style="width: 60%;">
-            <tr>
-                <th>Item Is</th> <th>Date</th>
-            </tr>
-            <tr *ngFor="let row of array">
-                <td>{{row.itemId}}</td><td>{{row.date}}</td>
-            </tr>
-        </table>
-   </div>
-   <div *ngIf="monthly">
-    <table border="1" style="width: 60%;">
-        <tr>
-            <th>Item Is</th> <th>Date</th>
-        </tr>
-        <tr *ngFor="let row of array">
-            <td>{{row.itemId}}</td><td>{{row.date}}</td>
-        </tr>
-    </table>
-</div>
-
-<div *ngIf="weekly">
-    <table border="1" style="width: 60%;">
-        <tr>
-            <th>Item Is</th> <th>Date</th>
-        </tr>
-        <tr *ngFor="let row of array">
-            <td>{{row.itemId}}</td><td>{{row.date}}</td>
-        </tr>
-    </table>
-</div>
-
-<div *ngIf="item">
-    <table border="1" style="width: 60%;">
-        <tr>
-            <th>Item Is</th> <th>Date</th>
-        </tr>
-        <tr *ngFor="let row of array">
-            <td>{{row.itemId}}</td><td>{{row.date}}</td>
-        </tr>
-    </table>
-</div>
-
     <br>
-    <hr>
     <a routerLink="/">Main Page</a> 
 </div>
