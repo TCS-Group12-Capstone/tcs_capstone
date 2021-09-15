@@ -9,11 +9,15 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   empAccountCreate(addEmployee:Employee):Observable<any>{
     return this.http.post("http://localhost:1020/api/employee/addEmployee",addEmployee,
     {responseType:'text'});
+  }
+  
+  sentRequests(request: Request): Observable<any> {
+    return this.http.post("http://localhost:1020/api/requests/send-requests", request);
   }
 
   empAccountDelete(empEmail:String):Observable<any>{
