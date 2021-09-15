@@ -30,8 +30,6 @@ app.use("/api/user",accountRouter);
 
 //http://localhost:1020/api/reports/getAllReports
 app.use("/api/reports",reportsRouter);
-app.listen(1020,()=>console.log("Server running on port number 1020"))
-
 
 //http://localhost:1020/api/requests/send-requests
 app.use("/api/requests", requestRouter);

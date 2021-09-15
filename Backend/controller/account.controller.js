@@ -63,5 +63,15 @@ let signIn = async (request,response)=>{
     }
 }
 
+let empSignIn = async (request,response)=>{
+    let emp = request.body;
+    let empInfo = await accountModel.findOne({email:emp.email,password:emp.password,type:"employee"});
+    if(empInfo != null) {
+        response.send("Success");
+    } else {
+        response.send("Login Failed");
+    }
+}
 
-module.exports={addEmployee,deleteEmployee, signUp,signIn}
+
+module.exports={addEmployee,deleteEmployee, signUp,signIn,empSignIn}

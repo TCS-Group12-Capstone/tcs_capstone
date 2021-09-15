@@ -37,6 +37,10 @@ export class EmployeeService {
     {responseType:'text'});
   }
 
+  empSignIn(userInfo:Employee):Observable<any>{
+    return this.http.post("http://localhost:1020/api/user/empSignIn",userInfo,
+    {responseType:'text'});
+  }
 
 
 }
