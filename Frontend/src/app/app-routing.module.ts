@@ -29,14 +29,14 @@ import { UnlockUserComponent } from './unlock-user/unlock-user.component';
 import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
 import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
-import { TrackingNumberComponent} from './tracking-number/tracking-number.component';
+import { TrackingNumberComponent } from './tracking-number/tracking-number.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
-  {path: "adminSignIn" , component: AdminSignInComponent},
-  { path: "userpanel",component:UserPanelComponent},
-  { path: "userSignUp",component:UserSignUpComponent},
-  { path: "userSignIn",component:UserSignInComponent},
+  { path: "adminSignIn", component: AdminSignInComponent },
+  { path: "userpanel", component: UserPanelComponent },
+  { path: "userSignUp", component: UserSignUpComponent },
+  { path: "userSignIn", component: UserSignInComponent },
   { path: "adminSignIn", component: SignInComponent },
   { path: "employeeSignIn", component: EmployeeSigninComponent },
   { path: "employeePanel", component: EmployeePanelComponent },
@@ -59,9 +59,9 @@ const routes: Routes = [
   { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent },
   { path: "adminPanel", component: AdminPanelComponent },
   { path: "unlockUser", component: UnlockUserComponent },
-  { path: "UpdateOrderStatus", component: ManageOrdersComponent }
-  { path: "tracking", component: TrackingNumberComponent},
-  { path: "raiseTicket", component: RaiseTicketComponent}
+  { path: "UpdateOrderStatus", component: ManageOrdersComponent },
+  { path: "tracking", component: TrackingNumberComponent },
+  { path: "raiseTicket", component: RaiseTicketComponent }
 ];
 
 @NgModule({

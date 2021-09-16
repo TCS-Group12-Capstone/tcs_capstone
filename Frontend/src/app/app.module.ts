@@ -67,7 +67,7 @@ import { TrackingNumberComponent } from './tracking-number/tracking-number.compo
     OrderStatusComponent,
     OrderConfirmationComponent,
     UnlockUserComponent,
-    ManageOrdersComponent
+    ManageOrdersComponent,
     RaiseTicketComponent,
     AdminSignInComponent,
     TrackingNumberComponent
