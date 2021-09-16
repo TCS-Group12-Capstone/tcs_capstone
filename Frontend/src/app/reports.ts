@@ -1,5 +1,6 @@
 export interface Reports {
     _id:String,
-    itemId:Number,
+    itemId:String,
+    customerId:String,
     date:Date
 }

@@ -83,4 +83,8 @@ export class EmployeeService {
     //console.log(user)
     return this.http.put("http://localhost:1020/api/lock/unlock", user);
   }
+  getCustomerReport(custId: any): Observable<any> {
+    return this.http.post("http://localhost:1020/api/reports/getCustomerReports", custId);
+  }
+
 }

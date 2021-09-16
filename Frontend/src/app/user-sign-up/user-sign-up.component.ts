@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -11,8 +11,8 @@ export class UserSignUpComponent implements OnInit {
   signUpRef = new FormGroup({
     fname: new FormControl(),
     lname: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl(),
+    email: new FormControl("",[Validators.required]),
+    password: new FormControl("",[Validators.required]),
     DOB: new FormControl(),
     phone: new FormControl(),
     address: new FormControl(),

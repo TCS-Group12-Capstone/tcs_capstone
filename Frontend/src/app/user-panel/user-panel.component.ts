@@ -26,6 +26,8 @@ export class UserPanelComponent implements OnInit {
 
   }
 
+
+
   logout() {
     this.router.navigate([""]);
   }
