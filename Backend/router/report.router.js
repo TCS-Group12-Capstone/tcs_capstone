@@ -9,6 +9,7 @@ router.get("/getWeeklyReports",reportsController.getWeeklyReports);
 router.get("/getMonthlyReports",reportsController.getMonthlyReports);
 router.get("/getProductReports",reportsController.getProductReports);
 router.get("/getCustomerReports",reportsController.getCustomerReports);
+router.post("/insert",reportsController.insert);
 
 module.exports = router;
 

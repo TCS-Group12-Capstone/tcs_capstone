@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cart } from '../classes/cart';
 import { Product } from '../classes/product';
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
+import { UsersService } from '../user.service';
 
 @Component({
   selector: 'app-display-product',
@@ -12,30 +13,41 @@ import { ProductService } from '../services/product.service';
 })
 export class DisplayProductComponent implements OnInit {
 
-  user: string = "phu@gmail.com";
+  username: string = "phu@gmail.com";
+  userId: string = "no available userId";
   cartSize: number = 0;
   cart: Array<Cart> = [];
   products: Array<Product> = [];
 
   constructor(
     public router: Router,
+    public activatedRoute: ActivatedRoute,
     public productService: ProductService,
-    public cartService: CartService
+    public cartService: CartService,
+    public userService: UsersService
   ) { }
 
   ngOnInit(): void {
+    //this.activatedRoute.params.subscribe(data => this.username = data.user);
+
+    this.userService.getUserId(this.username).subscribe(
+      result => {
+        this.userId = result._id;
+        this.updateCartSize();
+      },
+      error => console.log(error)
+    )
+
     this.productService.getAllProducts().subscribe(
       result => this.products = result,
       error => console.log(error)
     )
-
-    this.updateCartSize();
   }
 
   updateCartSize() {
-    this.cartService.getCart(this.user).subscribe(
+    this.cartService.getCart(this.userId).subscribe(
       result => {this.showCartSize(result)},
-      error => console.log()
+      error => console.log(error)
     )
   }
 
@@ -46,7 +58,7 @@ export class DisplayProductComponent implements OnInit {
   }
 
   addProductToCart(product: Product) {
-    let selectedProduct = new Cart(this.user, product._id, 1);
+    let selectedProduct = new Cart(this.userId, product._id, product.name, 1);
 
     this.cartSize += selectedProduct.quantity;
 
@@ -57,7 +69,7 @@ export class DisplayProductComponent implements OnInit {
   }
 
   goToCart() {
-    this.router.navigate(["cart", this.user]);
+    this.router.navigate(["cart", this.userId]);
   }
 
 }

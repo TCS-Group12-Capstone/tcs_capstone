@@ -7,6 +7,7 @@ let reportsRouter = require("./router/report.router")
 let productRouter = require("./router/product.router");
 let cartRouter = require("./router/cart.router");
 let requestRouter = require("./router/request.router");
+let orderRouter = require("./router/order.router");
 
 const { request } = require("express");
 
@@ -25,8 +26,10 @@ app.use("/api/employee", accountRouter);
 
 //http://localhost:1020/api/user/signIn 
 //http://localhost:1020/api/user/signUp 
-app.use("/api/user",accountRouter);
-
+//http://localhost:1020/api/user/getFund/<userId>
+//http://localhost:1020/api/user/getUserId/<username>
+//http://localhost:1020/api/user/decreaseFund
+app.use("/api/user", accountRouter);
 
 //http://localhost:1020/api/reports/getAllReports
 //http://localhost:1020/api/reports/getDailyReports
@@ -34,12 +37,15 @@ app.use("/api/user",accountRouter);
 //http://localhost:1020/api/reports/getMonthlyReports
 //http://localhost:1020/api/reports/getProductReports
 //http://localhost:1020/api/reports/getCustomerReports
-app.use("/api/reports",reportsRouter);
+//http://localhost:1020/api/reports/insert
+app.use("/api/reports", reportsRouter);
 
 //http://localhost:1020/api/requests/send-requests
 app.use("/api/requests", requestRouter);
 
+//http://localhost:1020/api/product/getAllProducts
 //http://localhost:1020/api/product/getProducts
+//http://localhost:1020/api/product/decreaseAmount
 app.use("/api/product", productRouter);
 
 //http://localhost:1020/api/cart/addCart
@@ -47,6 +53,9 @@ app.use("/api/product", productRouter);
 //http://localhost:1020/api/cart/deleteCart
 //http://localhost:1020/api/cart/decrementCart/<product>
 app.use("/api/cart", cartRouter);
+
+//http://localhost:1020/api/order/create
+app.use("/api/order", orderRouter);
 
 app.listen(1020, () => console.log("Server running on port number 1020"))
 

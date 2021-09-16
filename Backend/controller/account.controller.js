@@ -112,4 +112,56 @@ let getProfile = (request, response) => {
     })
 }
 
-module.exports = { addEmployee, deleteEmployee, signUp, signIn, updateProfile, getProfile ,empSignIn }
+let getFund = (request, response) => {
+    let user = request.params.userId; 
+
+    accountModel.findOne(
+        {_id : user},
+        {_id : 0, fund : 1}, // only get the field "fund"
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+let getUserId = (request, response) => {
+    let user = request.params.username;
+
+    accountModel.findOne(
+        {email : user},
+        {_id : 1},
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+let decreaseFund = (request, response) => {
+    let user = request.body;
+
+    accountModel.updateOne(
+        {_id : user.userId},
+        {$inc : {fund : -user.amount}},
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+module.exports = { 
+    addEmployee, deleteEmployee, signUp, 
+    signIn, updateProfile, getProfile, 
+    empSignIn, getFund, getUserId, decreaseFund
+}
