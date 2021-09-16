@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../employee.service';
+import { sharedService } from '../shared-service/shared.service';
 
 @Component({
   selector: 'app-employee-signin',
@@ -11,25 +12,25 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeSigninComponent implements OnInit {
   msg = "";
   loginRef = new FormGroup({
-    email:new FormControl(),
-    password:new FormControl()
+    email: new FormControl(),
+    password: new FormControl()
   })
-  constructor(public empService:EmployeeService,public router:Router) { }
+  constructor(public empService: EmployeeService, public router: Router, private service: sharedService) { }
 
   ngOnInit(): void {
   }
 
-  checkLogin(){
+  checkLogin() {
     let employeeInfo = this.loginRef.value;
     this.empService.empSignIn(employeeInfo).
-    subscribe(result => 
-      {
-        if(result == "Success"){
-          this.router.navigate(['employeePanel', employeeInfo.email]);
-        }else{
-          this.msg=result;
+      subscribe(result => {
+        if (result == "Success") {
+          this.service.send(employeeInfo.email);
+          this.router.navigate(['employeePanel'], { queryParams: { email: employeeInfo.email } });
+        } else {
+          this.msg = result;
         }
       }
-     ,err=>console.log(err))
+        , err => console.log(err))
   }
 }

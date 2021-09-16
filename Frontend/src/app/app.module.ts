@@ -28,6 +28,8 @@ import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
+import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
+import { sharedService } from './shared-service/shared.service';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
     OrderStatusComponent,
     OrderConfirmationComponent,
     RaiseTicketComponent
+    AdminSignInComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,7 @@ import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [sharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

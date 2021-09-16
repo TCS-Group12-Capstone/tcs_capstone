@@ -20,6 +20,11 @@ let url = "mongodb+srv://phu:XBMQocHQxxpBqRUW@cluster0.3xrre.mongodb.net/testDB?
 
 mongoose.connect(url).then(res => console.log("Database connected")).catch(error => console.log(error));
 
+
+//http://localhost:1020/api/admin/adminSignIn 
+app.use("/api/admin", accountRouter);
+
+
 //http://localhost:1020/api/employee/addEmployee 
 //http://localhost:1020/api/employee/deleteEmployee 
 app.use("/api/employee", accountRouter);
@@ -47,7 +52,9 @@ app.use("/api/requests", requestRouter);
 
 //http://localhost:1020/api/product/getAllProducts
 //http://localhost:1020/api/product/getProducts
+//http://localhost:1020/api/product/getAllProducts
 //http://localhost:1020/api/product/decreaseAmount
+
 app.use("/api/product", productRouter);
 
 //http://localhost:1020/api/cart/addCart
