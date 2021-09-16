@@ -145,7 +145,6 @@ let updateUserProfile = async (request, response) => {
 
 let getFund = (request, response) => {
     let user = request.params.userId;
-
     accountModel.findOne(
         {_id : user},
         {_id : 0, fund : 1}, // only get the field "fund"
@@ -176,7 +175,6 @@ let getUserId = (request, response) => {
 
 let decreaseFund = (request, response) => {
     let user = request.body;
-
     accountModel.updateOne(
         {_id : user.userId},
         {$inc : {fund : -user.amount}},
