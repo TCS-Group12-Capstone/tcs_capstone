@@ -7,31 +7,32 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-panel.component.css']
 })
 export class UserPanelComponent implements OnInit {
-  userName?:String;
-  constructor(public activateRouter:ActivatedRoute,public router:Router) { }
+  userName?: String;
+  email: any;
+  constructor(public activateRouter: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
     this.activateRouter.queryParams.subscribe(data => {
       this.email = data.id;
       console.log(this.email);
     });
-    this.activateRouter.params.subscribe(data => this.userName=data.email);
-    
+    this.activateRouter.params.subscribe(data => this.userName = data.email);
+
   }
-  
-  logout(){
+
+  logout() {
     this.router.navigate([""]);
   }
-  editProfile(){
-    this.router.navigate(["/editUserProfile"],{queryParams:{email:this.email}});
+  editProfile() {
+    this.router.navigate(["/editUserProfile"], { queryParams: { email: this.email } });
   }
-  funds(){
+  funds() {
     this.router.navigate(["/userFunds"]);
   }
-  cart(){
+  cart() {
     //this.router.navigate(["/userSignIn"]);
   }
-  orderStatus(){
+  orderStatus() {
     this.router.navigate(["/orderStatus"]);
   }
 }
