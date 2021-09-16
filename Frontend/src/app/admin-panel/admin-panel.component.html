@@ -1,15 +1,19 @@
 <div>
-    <h2>Admin Panel</h2>
-    <!-- <a routerLink="/addEmployee">Add Employee</a><br>
+  <h2>Admin Panel</h2>
+  <!-- <a routerLink="/addEmployee">Add Employee</a><br>
     <a routerLink="/deleteEmployee">Delete Employee</a><br>
     <a routerLink="/generateReport">Generate Report</a><br>
+    <a routerLink="/add">Add Product</a><br>
+    <a routerLink="/delete">Delete Product</a><br>
+    <a routerLink="/update">Update Product</a><br>
+    <a routerLink="/view">View Product</a><br>
     <a routerLink="/">Log out</a>  -->
-    <input type="button" value="Add Employee"
-    (click)="addEmployee()"/> |
-    <input type="button" value="Delete Employee"
-    (click)="deleteEmployee()"/> |
-    <input type="button" value="Generate Report"
-    (click)="generateReport()"/> |
-    <input type="button" value="Logout"
-    (click)="logout()"/> 
+  <input type="button" value="Add Employee" (click)="addEmployee()" /> |
+  <input type="button" value="Delete Employee" (click)="deleteEmployee()" /> |
+  <input type="button" value="Generate Report" (click)="generateReport()" /> |
+  <input type="button" value="Add Product" (click)="addProduct()" /> |
+  <input type="button" value="Delete Product" (click)="deleteProduct()" /> |
+  <input type="button" value="Update Product" (click)="updateProduct()" /> |
+  <input type="button" value="View Product" (click)="viewProduct()" /> |
+  <input type="button" value="Logout" (click)="logout()" />
 </div>

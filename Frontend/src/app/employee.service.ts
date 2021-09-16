@@ -11,6 +11,12 @@ export class EmployeeService {
 
   constructor(public http: HttpClient) { }
 
+
+  adminSignIn(userInfo:Employee):Observable<any>{
+    return this.http.post("http://localhost:1020/api/admin/adminSignIn",userInfo,
+    {responseType:'text'});
+  }
+
   empAccountCreate(addEmployee: Employee): Observable<any> {
     return this.http.post("http://localhost:1020/api/employee/addEmployee", addEmployee,
       { responseType: 'text' });
@@ -41,13 +47,14 @@ export class EmployeeService {
     return this.http.put("http://localhost:1020/api/employee/update", user);
   }
 
-  getProfile(): Observable<any> {
-    return this.http.post("http://localhost:1020/api/employee/profile", {});
+  getProfile(empEmail: String): Observable<any> {
+    console.log(empEmail)
+    return this.http.post("http://localhost:1020/api/employee/profile", { email: empEmail });
   }
 
-  empSignIn(userInfo:Employee):Observable<any>{
-    return this.http.post("http://localhost:1020/api/user/empSignIn",userInfo,
-    {responseType:'text'});
+  empSignIn(userInfo: Employee): Observable<any> {
+    return this.http.post("http://localhost:1020/api/user/empSignIn", userInfo,
+      { responseType: 'text' });
   }
 
   getDailyReport(): Observable<any> {
@@ -62,7 +69,20 @@ export class EmployeeService {
     return this.http.get("http://localhost:1020/api/reports/getWeeklyReports");
   }
 
+  updateUserProfile(user: any): Observable<any> {
+    return this.http.put("http://localhost:1020/api/employee/updateUserProfile", user);
+  }
+
   getItemReport(itemId: Employee): Observable<any> {
     return this.http.post("http://localhost:1020/api/reports/getProductReports", itemId);
   }
+
+  getCustomerReport(custId: any): Observable<any> {
+    return this.http.post("http://localhost:1020/api/reports/getCustomerReports", custId);
+  }
+
+  getAllProducts(): Observable<any> {
+    return this.http.get("http://localhost:1020/api/product/getAllProducts");
+  }
+
 }

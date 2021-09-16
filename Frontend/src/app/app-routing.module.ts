@@ -9,6 +9,10 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { AddComponent } from './add/add.component';
+import { DeleteComponent } from './delete/delete.component';
+import { UpdateComponent } from './update/update.component';
+import { ViewComponent } from './view/view.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
@@ -21,18 +25,25 @@ import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
+import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
-  { path: "userpanel/:email",component:UserPanelComponent},
+  {path: "adminSignIn" , component: AdminSignInComponent},
+  { path: "userpanel",component:UserPanelComponent},
   { path: "userSignUp",component:UserSignUpComponent},
   { path: "userSignIn",component:UserSignInComponent},
   { path: "adminSignIn", component: SignInComponent },
   { path: "employeeSignIn", component: EmployeeSigninComponent },
-  { path: "employeePanel/:email", component: EmployeePanelComponent },
+  { path: "employeePanel", component: EmployeePanelComponent },
   { path: "addEmployee", component: AddEmployeeComponent },
   { path: "deleteEmployee", component: DeleteEmployeeComponent },
   { path: "generateReport", component: GenerateReportComponent },
+  { path: "add", component: AddComponent },
+  { path: "delete", component: DeleteComponent },
+  { path: "update", component: UpdateComponent },
+  { path: "view", component: ViewComponent },
   { path: "SendRequest", component: SendRequestComponent },
   { path: "displayProducts", component: DisplayProductComponent},
   { path: "cart/:user", component: CartComponent},
@@ -43,7 +54,8 @@ const routes: Routes = [
   { path: "userFunds", component: UserFundsComponent},
   { path: "orderStatus", component: OrderStatusComponent},
   { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent},
-  { path: "adminPanel", component: AdminPanelComponent}
+  { path: "adminPanel", component: AdminPanelComponent},
+  { path: "raiseTicket", component: RaiseTicketComponent}
 ];
 
 @NgModule({

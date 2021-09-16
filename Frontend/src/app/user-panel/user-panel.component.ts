@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../classes/product';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-user-panel',
@@ -7,27 +9,39 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-panel.component.css']
 })
 export class UserPanelComponent implements OnInit {
+
   userName?:String;
-  constructor(public activateRouter:ActivatedRoute,public router:Router) { }
+  email = "";
+  constructor(public activateRouter:ActivatedRoute,public router:Router,public allProducts:EmployeeService) { }
+ products:Array<Product>=[];
 
   ngOnInit(): void {
-    this.activateRouter.params.subscribe(data => this.userName=data.email);
-    
+    this.activateRouter.queryParams.subscribe(data => {
+      this.email=data.id;
+      console.log(this.email);
+    });
+    this.allProducts.getAllProducts().
+    subscribe(result=>
+      this.products=result
+      ,error=>console.log(error))
+   
   }
   
+
+
   logout(){
-    this.router.navigate(["/userSignIn"]);
+    this.router.navigate([""]);
   }
-  editProfile(){
-    this.router.navigate(["/editUserProfile"]);
+  editProfile() {
+    this.router.navigate(["/editUserProfile"], { queryParams: { email: this.email } });
   }
-  funds(){
+  funds() {
     this.router.navigate(["/userFunds"]);
   }
-  cart(){
+  cart() {
     //this.router.navigate(["/userSignIn"]);
   }
-  orderStatus(){
+  orderStatus() {
     this.router.navigate(["/orderStatus"]);
   }
 }

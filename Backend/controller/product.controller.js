@@ -41,7 +41,7 @@ let decreaseAmount = (request, response) => {
   );
 };
 
-exports.getById = (req, res, next) => {
+let getById = (req, res, next) => {
   const productId = req.query.productId;
   if (productId === undefined) {
     next(
@@ -57,13 +57,13 @@ exports.getById = (req, res, next) => {
     .catch(next);
 };
 
-exports.getPriceById = (productId) => {
+let getPriceById = (productId) => {
   return productModel
     .findById(productId)
     .then((doc) => (({ price }) => ({ price }))(doc));
 };
 
-exports.updateById = (req, res, next) => {
+let updateById = (req, res, next) => {
   let { productId, name, price, quantity } = req.body;
 
   const payload = [
@@ -85,7 +85,7 @@ exports.updateById = (req, res, next) => {
     .catch(next);
 };
 
-exports.deleteById = (req, res, next) => {
+let deleteById = (req, res, next) => {
   const { productId } = req.query;
   if (productId === undefined) {
     next(
@@ -101,4 +101,12 @@ exports.deleteById = (req, res, next) => {
     .catch(next);
 };
 
-module.exports = { getAllProductDetails, getProductDetails, decreaseAmount };
+module.exports = {
+  getAllProductDetails,
+  getProductDetails,
+  decreaseAmount,
+  deleteById,
+  updateById,
+  getPriceById,
+  getById,
+};
