@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../classes/product';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-user-panel',
@@ -7,20 +9,27 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-panel.component.css']
 })
 export class UserPanelComponent implements OnInit {
-  userName?: String;
-  email: any;
-  constructor(public activateRouter: ActivatedRoute, public router: Router) { }
+
+  userName?:String;
+  email = "";
+  constructor(public activateRouter:ActivatedRoute,public router:Router,public allProducts:EmployeeService) { }
+ products:Array<Product>=[];
 
   ngOnInit(): void {
     this.activateRouter.queryParams.subscribe(data => {
-      this.email = data.id;
+      this.email=data.id;
       console.log(this.email);
     });
-    this.activateRouter.params.subscribe(data => this.userName = data.email);
-
+    this.allProducts.getAllProducts().
+    subscribe(result=>
+      this.products=result
+      ,error=>console.log(error))
+   
   }
+  
 
-  logout() {
+
+  logout(){
     this.router.navigate([""]);
   }
   editProfile() {

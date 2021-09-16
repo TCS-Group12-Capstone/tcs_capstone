@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../employee.service';
 
@@ -10,11 +10,14 @@ import { EmployeeService } from '../employee.service';
 })
 export class UserSignInComponent implements OnInit {
   signInRef = new FormGroup({
-    email: new FormControl(),
-    password:new FormControl()
+    email: new FormControl("",Validators.required),
+    password:new FormControl("", Validators.required)
   })
   constructor(public userService:EmployeeService,public router:Router) { }
   msg="";
+  userLock:boolean=false;
+  lockCounter:Number=3;
+
   ngOnInit(): void {
   }
   checkUser(){
@@ -27,6 +30,7 @@ export class UserSignInComponent implements OnInit {
           
         }else{
           this.msg=result;
+
         }
       }
      ,err=>console.log(err))

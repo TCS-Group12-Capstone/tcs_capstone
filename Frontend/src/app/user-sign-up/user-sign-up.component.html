@@ -6,9 +6,9 @@
         <label>Last Name</label>
         <input type="text" formControlName="lname"/><br/>
         <label>EmailId</label>
-        <input type="text" formControlName="email"/><br/>
+        <input type="text" formControlName="email" /><br/>
         <label>Password</label>
-        <input type="text" formControlName="password"/><br/>
+        <input type="password" formControlName="password" /><br/>
         <label>DOB</label>
         <input type="text" formControlName="DOB"/><br/>
         <label>Phone No.</label>
@@ -16,7 +16,7 @@
         <label>Adddress</label>
         <input type="text" formControlName="address"/><br/>
 
-        <input type="submit" value="Sign Up"/>
+        <input type="submit" value="Sign Up" [disabled]="!signUpRef.valid"/>
         <input type="reset" value="reset"/>
     </form>
     <br/>
