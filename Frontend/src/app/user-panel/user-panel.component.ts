@@ -35,7 +35,7 @@ export class UserPanelComponent implements OnInit {
     this.router.navigate(["/editUserProfile"],{queryParams:{email:this.email}});
   }
   funds(){
-    this.router.navigate(["/userFunds"]);
+    this.router.navigate(["/userFunds"],{queryParams:{email:this.email}});
   }
   cart(){
     //this.router.navigate(["/userSignIn"]);
