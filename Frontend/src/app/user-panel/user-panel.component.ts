@@ -11,13 +11,15 @@ export class UserPanelComponent implements OnInit {
   constructor(public activateRouter:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
-    this.activateRouter.params.subscribe(data => this.email = data.user);
+    this.activateRouter.queryParams.subscribe(data => {
+      this.email = JSON.stringify(data);
+    });
   }
   logout(){
-    this.router.navigate(["/userSignIn"]);
+    this.router.navigate([""]);
   }
   editProfile(){
-    this.router.navigate(["/editUserProfile"]);
+    this.router.navigate(["/editUserProfile"],{queryParams:{email:this.email}});
   }
   funds(){
     this.router.navigate(["/userFunds"]);

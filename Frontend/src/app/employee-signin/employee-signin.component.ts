@@ -25,7 +25,7 @@ export class EmployeeSigninComponent implements OnInit {
     subscribe(result => 
       {
         if(result == "Success"){
-          this.router.navigate(['employeePanel', employeeInfo.email]);
+          this.router.navigate(['employeePanel'], {queryParams: { email: employeeInfo.email }});
         }else{
           this.msg=result;
         }

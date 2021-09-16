@@ -25,3 +25,4 @@ export class EditUserProfileComponent implements OnInit {
     console.log(data);
   }
 }
+

@@ -22,12 +22,12 @@ import { OrderStatusComponent } from './order-status/order-status.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
-  { path: "userpanel/:email",component:UserPanelComponent},
+  { path: "userpanel",component:UserPanelComponent},
   { path: "userSignUp",component:UserSignUpComponent},
   { path: "userSignIn",component:UserSignInComponent},
   { path: "adminSignIn", component: SignInComponent },
   { path: "employeeSignIn", component: EmployeeSigninComponent },
-  { path: "employeePanel/:email", component: EmployeePanelComponent },
+  { path: "employeePanel", component: EmployeePanelComponent },
   { path: "addEmployee", component: AddEmployeeComponent },
   { path: "deleteEmployee", component: DeleteEmployeeComponent },
   { path: "generateReport", component: GenerateReportComponent },
