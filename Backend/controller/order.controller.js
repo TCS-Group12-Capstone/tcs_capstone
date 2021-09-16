@@ -12,4 +12,14 @@ let create = (request, response) => {
     })
 }
 
-module.exports = {create};
+let getTracking = async (request, response) => {
+    let order = request.body;
+    let orderInfo = await orderModel.findOne({ tracking: order.tracking});
+    if (orderInfo != null) {
+        response.send({msg:"found"});
+    } else {
+        response.send({msg:"failed"});
+    }
+}
+
+module.exports = {create, getTracking};

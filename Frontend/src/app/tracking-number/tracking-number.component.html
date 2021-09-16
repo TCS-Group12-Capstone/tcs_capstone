@@ -1,0 +1,15 @@
+<div style="height:100vh">
+    <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;">Enter Tracking Number</h4>
+            <form class="form-inline" [formGroup]="trackingRef" (ngSubmit)="enterTracking()">
+                <input class="form-control mb-2 mr-sm-2" type="text" formControlName="tracking" placeholder="Tracking #"/><br/>
+                <div style="text-align: center;">
+                    <button class="btn btn-info" style="margin-inline: 10px;"type="submit">Login</button>
+                </div>
+            </form><br/>
+            <h5 style="text-align: center;">{{msg}}</h5>
+        </div>
+    </div>
+</div>

@@ -12,4 +12,9 @@ export class OrderService {
   create(order: Object): Observable<any> {
     return this.http.post<any>("http://localhost:1020/api/order/create", order);
   }
+
+  getTracking(tracking: String): Observable<any> {
+    return this.http.post("http://localhost:1020/api/order/getTracking", { tracking: tracking });
+  }
 }
+

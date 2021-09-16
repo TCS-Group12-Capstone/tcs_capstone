@@ -30,6 +30,7 @@ import { OrderConfirmationComponent } from './order-confirmation/order-confirmat
 import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
 import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 import { sharedService } from './shared-service/shared.service';
+import { TrackingNumberComponent } from './tracking-number/tracking-number.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { sharedService } from './shared-service/shared.service';
     OrderStatusComponent,
     OrderConfirmationComponent,
     RaiseTicketComponent,
-    AdminSignInComponent
+    AdminSignInComponent,
+    TrackingNumberComponent
   ],
   imports: [
     BrowserModule,
