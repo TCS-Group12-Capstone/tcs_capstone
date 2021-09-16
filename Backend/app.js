@@ -21,6 +21,11 @@ let url = "mongodb+srv://phu:XBMQocHQxxpBqRUW@cluster0.3xrre.mongodb.net/testDB?
 
 mongoose.connect(url).then(res => console.log("Database connected")).catch(error => console.log(error));
 
+
+//http://localhost:1020/api/admin/adminSignIn 
+app.use("/api/admin", accountRouter);
+
+
 //http://localhost:1020/api/employee/addEmployee 
 //http://localhost:1020/api/employee/deleteEmployee 
 app.use("/api/employee", accountRouter);
@@ -30,6 +35,7 @@ app.use("/api/employee", accountRouter);
 //http://localhost:1020/api/user/getFund/<userId>
 //http://localhost:1020/api/user/getUserId/<username>
 //http://localhost:1020/api/user/decreaseFund
+//http://localhost:1020/api/user/verifyEmailAddress
 app.use("/api/user", accountRouter);
 
 //http://localhost:1020/api/reports/getAllReports
@@ -39,7 +45,6 @@ app.use("/api/user", accountRouter);
 //http://localhost:1020/api/reports/getProductReports
 //http://localhost:1020/api/reports/getCustomerReports
 //http://localhost:1020/api/reports/insert
-
 app.use("/api/reports", reportsRouter);
 
 //http://localhost:1020/api/requests/send-requests
@@ -49,7 +54,6 @@ app.use("/api/requests", requestRouter);
 //http://localhost:1020/api/product/getProducts
 //http://localhost:1020/api/product/getAllProducts
 //http://localhost:1020/api/product/decreaseAmount
-
 app.use("/api/product", productRouter);
 
 //http://localhost:1020/api/cart/addCart

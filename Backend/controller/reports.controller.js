@@ -75,12 +75,9 @@ let getProductReports = (request,response)=> {
 
 }
 
-
-
-
 let getCustomerReports = (request,response)=> {
-    let itmId = request.body;
-    reportsModel.find({itemId:itmId.id},(err,data) => {
+    let itemId = request.body;
+    reportsModel.find({customerId:itemId.id},(err,data) => {
         if(!err){
             response.json(data);
         }else {
@@ -93,7 +90,7 @@ let getCustomerReports = (request,response)=> {
 let insert = (request, response) => {
     let product = request.body;
 
-    reportModel.insertMany(product, (result, error) => {
+    reportModel.insertMany(product, (error, result) => {
         if (!error) {
             response.json(result);
         } else {

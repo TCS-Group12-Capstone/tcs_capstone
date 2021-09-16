@@ -27,9 +27,12 @@ import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-emplo
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
+import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 import { sharedService } from './shared-service/shared.service';
 import { UnlockUserComponent } from './unlock-user/unlock-user.component';
 import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
+import { TrackingNumberComponent } from './tracking-number/tracking-number.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
     OrderConfirmationComponent,
     UnlockUserComponent,
     ManageOrdersComponent
+    RaiseTicketComponent,
+    AdminSignInComponent,
+    TrackingNumberComponent
   ],
   imports: [
     BrowserModule,

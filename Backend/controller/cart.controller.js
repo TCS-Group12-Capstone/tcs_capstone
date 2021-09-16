@@ -11,11 +11,11 @@ let addCart = (request, response) => {
         ]},  // filter
         {$inc : {quantity : product.quantity}}, // increment the quantity
         {upsert : true},    // allow to insert a new document on the first add
-        (err, result) => {
-            if (!err) {
-                response.json("Added to cart");
+        (error, result) => {
+            if (!error) {
+                response.json(result);
             } else {
-                console.json(err); 
+                console.json(error); 
             }
     })
 }
@@ -25,11 +25,11 @@ let getCart = (request, response) => {
 
     cartModel.find(
         {userId : user},    // filter by userId
-        (result, err) => {
-            if (!err) {
+        (error, result) => {
+            if (!error) {
                 response.json(result);
             } else {
-                response.json(err);
+                response.json(error);
             }
     })
 }
@@ -39,7 +39,7 @@ let deleteCart = (request, response) => {
 
     cartModel.deleteOne(
         {$and : [{userId : product.userId}, {productId : product.productId}]},
-        (result, error) => {
+        (error, result) => {
             if (!error) {
                 response.json(result);
             } else {
@@ -55,7 +55,7 @@ let decrementCart = (request, response) => {
     cartModel.updateOne(
         {$and : [{userId : product.userId}, {productId : product.productId}]},
         {$inc : {quantity : product.quantity}},
-        (result, error) => {
+        (error, result) => {
             if (!error) {
                 response.json(result);
             } else {
