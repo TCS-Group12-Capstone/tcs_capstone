@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <h2>User Panel</h2>
     <p>Hello : {{email}}</p>
    
@@ -7,19 +7,52 @@
     <input type="button" value="Funds"
     (click)="funds()"/> |
     <input type="button" value="Cart"
-    (click)="cart()"/> |
+    (click)="goToCart()"/> |
     <input type="button" value="Order Status"
     (click)="orderStatus()"/> |
     <input type="button" value="Logout"
     (click)="logout()"/> 
     <br>
     <div *ngFor="let product of products" style="border: red solid; display: inline-block; height: auto;">
-        <!-- <img src="{{product.image}}"> -->
-        <!-- {{product.image}} -->
+        <img src="{{product.image}}">
+        {{product.image}}
         {{product.name}}
         {{product.quantity}}
         $ {{product.price/product.quantity}} each
         <br>
         <input type="button" value="Add to Cart">
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Hello : {{email}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col floatRight">
+            <!-- <label>Cart Size:</label> -->
+            <label id="cartSize">{{cartSize}}</label>
+            <input type="button" class="btn btn-success" (click)="editProfile()" value="Edit Profile"> |
+            <input type="button" class="btn btn-success" (click)="funds()" value="Funds"> |
+            <input type="button" class="btn btn-success" (click)="goToCart()" value="Go to Cart"> |          
+            <input type="button" class="btn btn-success" (click)="orderStatus()" value="Order Status"> |
+            <input type="button" class="btn btn-success" (click)="logout()" value="Logout">
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let product of products" class="col-3">
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <h6 class="card-subtitle mb-2">${{product.price}}</h6>
+                    <h6 class="card-subtitle mb-2">In-stock: {{product.quantity}}</h6>
+                    <input type="button" value="Add" class="btn btn-primary" 
+                        [disabled]="product.quantity <= 0" (click)="addProductToCart(product)">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
