@@ -21,6 +21,8 @@ import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { UnlockUserComponent } from './unlock-user/unlock-user.component';
+import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
 import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 import { TrackingNumberComponent} from './tracking-number/tracking-number.component';
@@ -38,16 +40,18 @@ const routes: Routes = [
   { path: "deleteEmployee", component: DeleteEmployeeComponent },
   { path: "generateReport", component: GenerateReportComponent },
   { path: "SendRequest", component: SendRequestComponent },
-  { path: "displayProducts", component: DisplayProductComponent},
-  { path: "cart/:user", component: CartComponent},
-  { path: "checkout/:user", component: CheckoutComponent},
   { path: "displayProducts", component: DisplayProductComponent },
-  { path: "profileEdit", component: EditEmployeeProfileComponent},
-  { path: "editUserProfile", component: EditUserProfileComponent},
-  { path: "userFunds", component: UserFundsComponent},
-  { path: "orderStatus", component: OrderStatusComponent},
-  { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent},
-  { path: "adminPanel", component: AdminPanelComponent},
+  { path: "cart/:user", component: CartComponent },
+  { path: "checkout/:user", component: CheckoutComponent },
+  { path: "displayProducts", component: DisplayProductComponent },
+  { path: "profileEdit", component: EditEmployeeProfileComponent },
+  { path: "editUserProfile", component: EditUserProfileComponent },
+  { path: "userFunds", component: UserFundsComponent },
+  { path: "orderStatus", component: OrderStatusComponent },
+  { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent },
+  { path: "adminPanel", component: AdminPanelComponent },
+  { path: "unlockUser", component: UnlockUserComponent },
+  { path: "UpdateOrderStatus", component: ManageOrdersComponent }
   { path: "tracking", component: TrackingNumberComponent},
   { path: "raiseTicket", component: RaiseTicketComponent}
 ];

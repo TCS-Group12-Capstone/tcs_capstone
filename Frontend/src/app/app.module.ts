@@ -30,6 +30,8 @@ import { OrderConfirmationComponent } from './order-confirmation/order-confirmat
 import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
 import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 import { sharedService } from './shared-service/shared.service';
+import { UnlockUserComponent } from './unlock-user/unlock-user.component';
+import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 import { TrackingNumberComponent } from './tracking-number/tracking-number.component';
 
 @NgModule({
@@ -56,6 +58,8 @@ import { TrackingNumberComponent } from './tracking-number/tracking-number.compo
     UserFundsComponent,
     OrderStatusComponent,
     OrderConfirmationComponent,
+    UnlockUserComponent,
+    ManageOrdersComponent
     RaiseTicketComponent,
     AdminSignInComponent,
     TrackingNumberComponent

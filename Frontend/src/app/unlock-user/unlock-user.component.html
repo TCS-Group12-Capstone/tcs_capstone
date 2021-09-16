@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container outerbox">
+        <h3>Unlock Users</h3>
+
+        <table class="table innerbox">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Email</th>
+                    <th>Reason</th>
+                    <th>Action</th>
+                </tr>             
+            </thead>
+            <tbody>                   
+                <tr *ngFor="let user of userList">
+                    <td>
+                        {{user.userId}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td>
+                        {{user.reason}}
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary"
+                            (click)="unlockUsers(user.email, user.userId)">Unlock</button>
+                    </td>
+                </tr>
+            </tbody>         
+        </table>
+        <div class="container">
+            <button class="btn btn-secondary" routerLink="/employeePanel">Home</button>
+        </div>
+    </div>
+</body>
+
+</html>
