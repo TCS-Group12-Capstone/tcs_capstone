@@ -12,7 +12,8 @@ export class UserPanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.activateRouter.queryParams.subscribe(data => {
-      this.email = JSON.stringify(data);
+      this.email = data.id;
+      console.log(this.email);
     });
   }
   logout(){
