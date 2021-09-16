@@ -47,13 +47,14 @@ export class EmployeeService {
     return this.http.put("http://localhost:1020/api/employee/update", user);
   }
 
-  getProfile(): Observable<any> {
-    return this.http.post("http://localhost:1020/api/employee/profile", {});
+  getProfile(empEmail: String): Observable<any> {
+    console.log(empEmail)
+    return this.http.post("http://localhost:1020/api/employee/profile", { email: empEmail });
   }
 
-  empSignIn(userInfo:Employee):Observable<any>{
-    return this.http.post("http://localhost:1020/api/user/empSignIn",userInfo,
-    {responseType:'text'});
+  empSignIn(userInfo: Employee): Observable<any> {
+    return this.http.post("http://localhost:1020/api/user/empSignIn", userInfo,
+      { responseType: 'text' });
   }
 
   getDailyReport(): Observable<any> {

@@ -19,8 +19,8 @@ let addEmployee = async (request, response) => {
 }
 
 
-let deleteEmployee = (request,response)=>{
-    
+let deleteEmployee = (request, response) => {
+
     let empEmail = request.params.empEmail;
 
     accountModel.deleteOne({ email: empEmail, type: "employee" }, (err, result) => {
@@ -56,24 +56,24 @@ let signIn = async (request, response) => {
     let user = request.body;
 
 
-    let userInfo = await accountModel.findOne({email:user.email,password:user.password,type:"user"});
-    
-    if(signInCount < 1){
+    let userInfo = await accountModel.findOne({ email: user.email, password: user.password, type: "user" });
+
+    if (signInCount < 1) {
         response.send("Account Locked");
-    }else if(userInfo != null){
+    } else if (userInfo != null) {
         response.send("Success");
-    }else{
-        response.send("Invalid user name or password you have "+ signInCount + " attempt");
+    } else {
+        response.send("Invalid user name or password you have " + signInCount + " attempt");
 
         signInCount--;
     }
 }
 
 
-let empSignIn = async (request,response)=>{
+let empSignIn = async (request, response) => {
     let emp = request.body;
-    let empInfo = await accountModel.findOne({email:emp.email,password:emp.password,type:"employee"});
-    if(empInfo != null) {
+    let empInfo = await accountModel.findOne({ email: emp.email, password: emp.password, type: "employee" });
+    if (empInfo != null) {
         response.send("Success");
     } else {
         response.send("Login Failed");
@@ -93,7 +93,6 @@ let adminSignIn = async (request,response)=>{
 }
 
 let updateProfile = async (request, response) => {
-
     let empEmail = request.body;
 
     accountModel.updateOne({ fname: empEmail.fname }, { $set: { password: empEmail.password } }, (err, result) => {
@@ -112,7 +111,7 @@ let getProfile = (request, response) => {
     let empfname = request.body;
 
     empfname["type"] = "employee"
-    accountModel.findOne({ id: empfname._id, type: "employee" }, (err, data) => {
+    accountModel.findOne({ email: empfname.email, type: "employee" }, (err, data) => {
         if (err) {
             response.status(403).json({ "error": err });
         }
@@ -124,6 +123,9 @@ let getProfile = (request, response) => {
         }
     })
 }
+
+
+
 
 let updateUserProfile = async (request, response) => {
 
@@ -141,11 +143,11 @@ let updateUserProfile = async (request, response) => {
 }
 
 let getFund = (request, response) => {
-    let user = request.params.userId; 
+    let user = request.params.userId;
 
     accountModel.findOne(
-        {_id : user},
-        {_id : 0, fund : 1}, // only get the field "fund"
+        { _id: user },
+        { _id: 0, fund: 1 }, // only get the field "fund"
         (result, error) => {
             if (!error) {
                 response.json(result);
@@ -160,7 +162,7 @@ let getUserId = (request, response) => {
     let user = request.params.username;
 
     accountModel.findOne(
-        {email : user},
+        { email: user },
         (result, error) => {
             if (!error) {
                 response.json(result);
@@ -175,8 +177,8 @@ let decreaseFund = (request, response) => {
     let user = request.body;
 
     accountModel.updateOne(
-        {_id : user.userId},
-        {$inc : {fund : -user.amount}},
+        { _id: user.userId },
+        { $inc: { fund: -user.amount } },
         (result, error) => {
             if (!error) {
                 response.json(result);
