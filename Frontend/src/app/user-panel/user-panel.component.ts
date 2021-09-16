@@ -14,38 +14,43 @@ import { UsersService } from '../user.service';
 })
 export class UserPanelComponent implements OnInit {
 
-  userName?:String;
-  email = "";
+  email = "no available email";
+  name = "no available name";
   userId: string = "no available userId";
-  products:Array<Product>=[];
+  products: Array<Product> = [];
   cartSize: number = 0;
   cart: Array<Cart> = [];
 
-  //  products: Array<Product> = [];
- 
-  constructor(public activateRouter:ActivatedRoute,
-    public router:Router,
-    public allProducts:EmployeeService,
-    public productService:ProductService,
-    public userService:UsersService,
+  constructor(public activateRouter: ActivatedRoute,
+    public router: Router,
+    public allProducts: EmployeeService,
+    public productService: ProductService,
+    public userService: UsersService,
     public cartService: CartService) { }
-
 
   ngOnInit(): void {
     this.activateRouter.queryParams.subscribe(data => {
-      this.email=data.id;
-      console.log(this.email);
+      this.userService.getUserId(data.id).subscribe(
+        result => {
+          this.userId = result._id;
+          this.name = result.fname + " " + result.lname; 
+          this.email = data.id;
+          this.updateCartSize();
+        },
+        error => console.log(error)
+      )
     });
+
     this.allProducts.getAllProducts().
-    subscribe(result=>
-      this.products=result
-      ,error=>console.log(error))
-   
+      subscribe(result =>
+        this.products = result
+        , error => console.log(error)
+    );
   }
-  
+
   updateCartSize() {
     this.cartService.getCart(this.userId).subscribe(
-      result => {this.showCartSize(result)},
+      result => { this.showCartSize(result) },
       error => console.log(error)
     )
   }
@@ -70,15 +75,17 @@ export class UserPanelComponent implements OnInit {
   goToCart() {
     this.router.navigate(["cart", this.userId]);
   }
-  logout(){
+  
+  logout() {
     this.router.navigate([""]);
   }
+
   editProfile() {
     this.router.navigate(["/editUserProfile"], { queryParams: { email: this.email } });
   }
-  
-  funds(){
-    this.router.navigate(["/userFunds"],{queryParams:{email:this.email}});
+
+  funds() {
+    this.router.navigate(["/userFunds"], { queryParams: { email: this.email } });
 
   }
 

@@ -12,7 +12,7 @@ let addCart = (request, response) => {
         {$inc : {quantity : product.quantity}}, // increment the quantity
         {upsert : true},    // allow to insert a new document on the first add
         (error, result) => {
-            if (!err) {
+            if (!error) {
                 response.json(result);
             } else {
                 console.json(error); 
