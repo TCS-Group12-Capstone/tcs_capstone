@@ -50,5 +50,9 @@ export class EmployeeService {
     {responseType:'text'});
   }
 
+  updateUserProfile(user: any): Observable<any> {
+    return this.http.put("http://localhost:1020/api/employee/updateUserProfile", user);
+  }
+
 
 }

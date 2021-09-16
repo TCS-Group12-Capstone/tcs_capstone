@@ -13,6 +13,7 @@ router.post("/signUp", accountController.signUp);
 router.post("/signIn", accountController.signIn);
 
 router.post("/empSignIn",accountController.empSignIn);
+router.put("/updateUserProfile",accountController.updateUserProfile);
 
 
 

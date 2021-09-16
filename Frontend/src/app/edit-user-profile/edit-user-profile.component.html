@@ -7,15 +7,16 @@
 
             <form [formGroup]="userProfileRef" (ngSubmit)="updateUserInfo()">
                 <label>Address: </label>
-                <input class="form-control mb-2 mr-sm-2" type="text" placeholder="New Address" formControlName="address"/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="text" placeholder="New Address" formControlName="address" required><br/>
                 <label>Phone Number: </label>
-                <input class="form-control mb-2 mr-sm-2" type="text" placeholder="New Phone Number" formControlName="phone"/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="text" placeholder="New Phone Number" formControlName="phone" required/><br/>
                 <label>Email ID: </label>
-                <input class="form-control mb-2 mr-sm-2" type="text" placeholder="New Email" formControlName="email"/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="text" placeholder="New Email" formControlName="email" required/><br/>
                 <label>New Password: </label>
-                <input class="form-control mb-2 mr-sm-2" type="password" placeholder="New Password" formControlName="password"/><br/>
-                <button class="btn btn-info col-12" type="submit" >Update</button>
+                <input class="form-control mb-2 mr-sm-2" type="password" placeholder="New Password" formControlName="password" required/><br/>
+                <button class="btn btn-info col-12" type="submit" >Update & Logout</button>
             </form>
+            {{error}}
         </div>
     </div>
 </div>

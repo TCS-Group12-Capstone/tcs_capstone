@@ -112,4 +112,19 @@ let getProfile = (request, response) => {
     })
 }
 
-module.exports = { addEmployee, deleteEmployee, signUp, signIn, updateProfile, getProfile ,empSignIn }
+let updateUserProfile = async (request, response) => {
+
+    let data = request.body;
+    console.log(data);
+    accountModel.updateOne({ email: data.currEmail }, { $set: { address: data.address, phone: data.phone, email: data.email, password: data.password } }, (err, result) => {
+        if (!err) {
+            response.send({
+                result
+            })
+        } else {
+            response.send(err)
+        }
+    })
+}
+
+module.exports = { addEmployee, deleteEmployee, signUp, signIn, updateProfile, getProfile ,empSignIn, updateUserProfile }
