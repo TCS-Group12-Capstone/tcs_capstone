@@ -55,7 +55,7 @@ import { sharedService } from './shared-service/shared.service';
     UserFundsComponent,
     OrderStatusComponent,
     OrderConfirmationComponent,
-    RaiseTicketComponent
+    RaiseTicketComponent,
     AdminSignInComponent
   ],
   imports: [
