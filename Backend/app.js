@@ -40,6 +40,7 @@ app.use("/api/reports", reportsRouter);
 app.use("/api/requests", requestRouter);
 
 //http://localhost:1020/api/product/getProducts
+//http://localhost:1020/api/product/getAllProducts
 app.use("/api/product", productRouter);
 
 //http://localhost:1020/api/cart/addCart
