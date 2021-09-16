@@ -21,6 +21,7 @@ import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
 import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 
 const routes: Routes = [
@@ -45,8 +46,8 @@ const routes: Routes = [
   { path: "userFunds", component: UserFundsComponent},
   { path: "orderStatus", component: OrderStatusComponent},
   { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent},
-  { path: "adminPanel", component: AdminPanelComponent}
-  
+  { path: "adminPanel", component: AdminPanelComponent},
+  { path: "raiseTicket", component: RaiseTicketComponent}
 ];
 
 @NgModule({

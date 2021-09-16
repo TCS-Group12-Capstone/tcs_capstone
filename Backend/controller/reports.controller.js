@@ -93,7 +93,7 @@ let getCustomerReports = (request,response)=> {
 let insert = (request, response) => {
     let product = request.body;
 
-    reportModel.insertMany(product, (result, error) => {
+    reportModel.insertMany(product, (error, result) => {
         if (!error) {
             response.json(result);
         } else {
