@@ -70,16 +70,17 @@ export class UserPanelComponent implements OnInit {
   goToCart() {
     this.router.navigate(["cart", this.userId]);
   }
+  
   logout(){
-    this.router.navigate([""]);
+    this.router.navigate(["/userSignIn"]);
   }
+
   editProfile() {
     this.router.navigate(["/editUserProfile"], { queryParams: { email: this.email } });
   }
-  
-  funds(){
-    this.router.navigate(["/userFunds"],{queryParams:{email:this.email}});
 
+  funds() {
+    this.router.navigate(["/userFunds"]);
   }
 
   orderStatus() {
