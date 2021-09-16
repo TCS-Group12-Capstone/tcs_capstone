@@ -35,7 +35,7 @@ let getMonthlyReports = (request,response)=> {
     let d = new Date();
     d.setHours(0,0,0,0,0)
     d.setDate(d.getDate() - 30);
-    console.log(d)
+    // console.log(d)
     reportsModel.find({date:{ $gte: d }},(err,data) => {
         if(!err){
             response.json(data);
