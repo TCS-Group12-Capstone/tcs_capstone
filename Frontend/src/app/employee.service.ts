@@ -62,7 +62,7 @@ export class EmployeeService {
     return this.http.get("http://localhost:1020/api/reports/getWeeklyReports");
   }
 
-  getItemReport(itemId: Number): Observable<any> {
+  getItemReport(itemId: Employee): Observable<any> {
     return this.http.post("http://localhost:1020/api/reports/getProductReports", itemId);
   }
 }
