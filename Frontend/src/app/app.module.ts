@@ -23,7 +23,6 @@ import { SignInComponent } from './admin/signin/signin.component';
 import { UserSigninComponent } from './user-signin/user-signin.component';
 import { EmployeeSigninComponent } from './employee-signin/employee-signin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -58,7 +57,6 @@ import { TrackingNumberComponent } from './tracking-number/tracking-number.compo
     UserSigninComponent,
     EmployeeSigninComponent,
     LandingPageComponent,
-    DisplayProductComponent,
     CartComponent,
     SendRequestComponent,
     CheckoutComponent,

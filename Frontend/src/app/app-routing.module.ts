@@ -13,7 +13,6 @@ import { AddComponent } from './add/add.component';
 import { DeleteComponent } from './delete/delete.component';
 import { UpdateComponent } from './update/update.component';
 import { ViewComponent } from './view/view.component';
-import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -48,10 +47,8 @@ const routes: Routes = [
   { path: "update", component: UpdateComponent },
   { path: "view", component: ViewComponent },
   { path: "SendRequest", component: SendRequestComponent },
-  { path: "displayProducts", component: DisplayProductComponent },
   { path: "cart/:user", component: CartComponent },
   { path: "checkout/:user", component: CheckoutComponent },
-  { path: "displayProducts", component: DisplayProductComponent },
   { path: "profileEdit", component: EditEmployeeProfileComponent },
   { path: "editUserProfile", component: EditUserProfileComponent },
   { path: "userFunds", component: UserFundsComponent },
