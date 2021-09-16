@@ -8,14 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UserPanelComponent implements OnInit {
   userName?:String;
+  email = "";
   constructor(public activateRouter:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
     this.activateRouter.queryParams.subscribe(data => {
-      this.email = data.id;
+      this.email=data.id;
       console.log(this.email);
     });
-    this.activateRouter.params.subscribe(data => this.userName=data.email);
     
   }
   
