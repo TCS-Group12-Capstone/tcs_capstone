@@ -1,0 +1,16 @@
+<div>
+    <h2>Log In Page</h2>
+    <form [formGroup]="signInRef" (ngSubmit)="checkAdmin()">
+        
+        <label>Email </label>
+        <input type="text" formControlName="email"/><br/>
+        <label>Password </label>
+        <input type="password" formControlName="password"/><br/>
+        
+        <input type="submit" value="Sign In" [disabled]="!signInRef.valid"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br>
+    {{msg}}
+
+</div>

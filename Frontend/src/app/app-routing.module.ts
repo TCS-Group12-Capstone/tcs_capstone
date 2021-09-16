@@ -21,9 +21,11 @@ import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
+  {path: "adminSignIn" , component: AdminSignInComponent},
   { path: "userpanel",component:UserPanelComponent},
   { path: "userSignUp",component:UserSignUpComponent},
   { path: "userSignIn",component:UserSignInComponent},
@@ -44,6 +46,7 @@ const routes: Routes = [
   { path: "orderStatus", component: OrderStatusComponent},
   { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent},
   { path: "adminPanel", component: AdminPanelComponent}
+  
 ];
 
 @NgModule({

@@ -27,7 +27,9 @@ import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-emplo
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 import { sharedService } from './shared-service/shared.service';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { sharedService } from './shared-service/shared.service';
     EditEmployeeProfileComponent,
     UserFundsComponent,
     OrderStatusComponent,
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
+    AdminSignInComponent
   ],
   imports: [
     BrowserModule,

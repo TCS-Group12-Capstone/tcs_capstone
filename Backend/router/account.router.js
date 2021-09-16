@@ -3,6 +3,8 @@ let router = express.Router();
 let accountController = require("../controller/account.controller");
 
 
+router.post("/adminSignIn", accountController.adminSignIn);
+
 router.post("/addEmployee", accountController.addEmployee);
 router.delete("/deleteEmployee/:empEmail", accountController.deleteEmployee);
 router.put("/update", accountController.updateProfile);

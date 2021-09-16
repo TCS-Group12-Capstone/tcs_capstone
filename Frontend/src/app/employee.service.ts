@@ -11,6 +11,12 @@ export class EmployeeService {
 
   constructor(public http: HttpClient) { }
 
+
+  adminSignIn(userInfo:Employee):Observable<any>{
+    return this.http.post("http://localhost:1020/api/admin/adminSignIn",userInfo,
+    {responseType:'text'});
+  }
+
   empAccountCreate(addEmployee: Employee): Observable<any> {
     return this.http.post("http://localhost:1020/api/employee/addEmployee", addEmployee,
       { responseType: 'text' });
