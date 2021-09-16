@@ -4,6 +4,7 @@ mongoose.pluralize(null);
 let cartSchema = mongoose.Schema({
     userId : String,
     productId : String,
+    productName : String,
     quantity : Number
 })
 

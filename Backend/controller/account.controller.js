@@ -112,12 +112,27 @@ let getProfile = (request, response) => {
     })
 }
 
+let updateUserProfile = async (request, response) => {
+
+    let data = request.body;
+    console.log(data);
+    accountModel.updateOne({ email: data.currEmail }, { $set: { address: data.address, phone: data.phone, email: data.email, password: data.password } }, (err, result) => {
+        if (!err) {
+            response.send({
+                result
+            })
+        } else {
+            response.send(err)
+        }
+    })
+}
+
 let getFund = (request, response) => {
-    let user = request.params.userId;
+    let user = request.params.userId; 
 
     accountModel.findOne(
-        {email : user},
-        {fund : 1}, // return the field "fund" (and the field _id as a bonus)
+        {_id : user},
+        {_id : 0, fund : 1}, // only get the field "fund"
         (result, error) => {
             if (!error) {
                 response.json(result);
@@ -128,4 +143,39 @@ let getFund = (request, response) => {
     )
 }
 
-module.exports = { addEmployee, deleteEmployee, signUp, signIn, updateProfile, getProfile , empSignIn, getFund }
+let getUserId = (request, response) => {
+    let user = request.params.username;
+
+    accountModel.findOne(
+        {email : user},
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+let decreaseFund = (request, response) => {
+    let user = request.body;
+
+    accountModel.updateOne(
+        {_id : user.userId},
+        {$inc : {fund : -user.amount}},
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+module.exports = { 
+    addEmployee, deleteEmployee, signUp, 
+    signIn, updateProfile, getProfile, 
+    empSignIn, getFund, getUserId, decreaseFund, updateUserProfile
+}

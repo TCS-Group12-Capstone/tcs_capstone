@@ -11,8 +11,8 @@ let accountSchema = mongoose.Schema({
     phone:{type:Number},
     address:{type:String},
     type:{type:String},
-    fund:{type:String},
-    lock:{type:String}
+    fund:{type:Number},
+    lock:{type:Boolean}
 });
 
 let accountModel = mongoose.model("Account",accountSchema);

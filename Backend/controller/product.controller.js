@@ -27,4 +27,20 @@ let getProductDetails = (request, response) => {
         })
 }
 
-module.exports = {getAllProductDetails, getProductDetails};
+let decreaseAmount = (request, response) => {
+    let product = request.body;
+
+    productModel.updateOne(
+        {_id : product._id},
+        {$inc : {quantity : -product.amount}},
+        (result, error) => {
+            if (!error) {
+                response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+module.exports = {getAllProductDetails, getProductDetails, decreaseAmount};

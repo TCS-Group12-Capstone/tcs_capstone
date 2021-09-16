@@ -7,6 +7,7 @@ router.get("/getAllReports",reportsController.getAllReports);
 router.get("/getDailyReports",reportsController.getDailyReport);
 router.get("/getWeeklyReports",reportsController.getWeeklyReports);
 router.get("/getMonthlyReports",reportsController.getMonthlyReports);
+router.post("/insert",reportsController.insert);
 router.post("/getProductReports",reportsController.getProductReports);
 router.post("/getCustomerReports",reportsController.getCustomerReports);
 
