@@ -37,6 +37,7 @@ let deleteEmployee = (request,response)=>{
 let signUp = async (request, response) => {
     let user = request.body;
     user["type"] = "user"
+    user["fund"] = "0"
     let userExists = await accountModel.findOne({ email: user.email, type: "user" });
     console.log(userExists);
     if (userExists == null) {
@@ -72,6 +73,18 @@ let signIn = async (request, response) => {
 let empSignIn = async (request,response)=>{
     let emp = request.body;
     let empInfo = await accountModel.findOne({email:emp.email,password:emp.password,type:"employee"});
+    if(empInfo != null) {
+        response.send("Success");
+    } else {
+        response.send("Login Failed");
+    }
+}
+
+
+
+let adminSignIn = async (request,response)=>{
+    let emp = request.body;
+    let empInfo = await accountModel.findOne({email:emp.email,password:emp.password,type:"admin"});
     if(empInfo != null) {
         response.send("Success");
     } else {
@@ -177,5 +190,6 @@ let decreaseFund = (request, response) => {
 module.exports = { 
     addEmployee, deleteEmployee, signUp, 
     signIn, updateProfile, getProfile, 
-    empSignIn, getFund, getUserId, decreaseFund, updateUserProfile
+    empSignIn, getFund, getUserId, decreaseFund, updateUserProfile,
+    adminSignIn
 }

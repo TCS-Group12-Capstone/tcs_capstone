@@ -27,6 +27,7 @@ import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-emplo
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { OrderConfirmationComponent } from './order-confirmation/order-confirmat
     EditEmployeeProfileComponent,
     UserFundsComponent,
     OrderStatusComponent,
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
+    AdminSignInComponent
   ],
   imports: [
     BrowserModule,
