@@ -1,3 +1,4 @@
+const reportModel = require("../model/report.model");
 let reportsModel = require ("../model/report.model")
 
 
@@ -82,7 +83,21 @@ let getProductReports = (request,response)=> {
 
 }
 
-module.exports = { getAllReports,getDailyReport,getMonthlyReports,getWeeklyReports,getCustomerReports,getProductReports}
+let insert = (request, response) => {
+    let product = request.body;
+
+    reportModel.insertMany(product, (result, error) => {
+        if (!error) {
+            response.json(result);
+        } else {
+            response.json(error);
+        }
+    })
+}
+
+module.exports = {getAllReports, getDailyReport,
+    getMonthlyReports, getWeeklyReports,
+    getCustomerReports, getProductReports, insert}
 
 
 

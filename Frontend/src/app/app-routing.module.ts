@@ -20,6 +20,7 @@ import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
+import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: "editUserProfile", component: EditUserProfileComponent},
   { path: "userFunds", component: UserFundsComponent},
   { path: "orderStatus", component: OrderStatusComponent},
+  { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent},
   { path: "adminPanel", component: AdminPanelComponent}
 ];
 
