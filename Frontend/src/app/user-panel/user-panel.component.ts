@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-panel.component.css']
 })
 export class UserPanelComponent implements OnInit {
-  email:String="";
+  userName?:String;
   constructor(public activateRouter:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
@@ -15,7 +15,10 @@ export class UserPanelComponent implements OnInit {
       this.email = data.id;
       console.log(this.email);
     });
+    this.activateRouter.params.subscribe(data => this.userName=data.email);
+    
   }
+  
   logout(){
     this.router.navigate([""]);
   }

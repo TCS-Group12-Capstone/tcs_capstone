@@ -3,7 +3,8 @@ let mongoose = require("mongoose");
 mongoose.pluralize(null);
 
 let reportSchema = mongoose.Schema({
-    itemId:{type:Number},
+    itemId:{type:String},
+    customerId:{type:String},
     date:{type:Date}
 });
 

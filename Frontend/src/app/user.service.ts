@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 export type UserRole = "admin" | "customer" | "employee";
@@ -19,8 +19,8 @@ export interface User {
 })
 export class UsersService {
 
-	host = "http://localhost:9090";
-	endpoint = "/users";
+	host = "http://localhost:1020";
+	endpoint = "/api/user";
 	loginAttempts:number = 0;
 	
 	constructor(private http: HttpClient) { }
@@ -72,11 +72,13 @@ export class UsersService {
 				catchError(error => throwError(error))
 			)
 	}
+
 	deleteUserByID(user: {userId: String}){
 		const url = this.host + this.endpoint + "/getUserById";
 		this.http.delete(url, { params: { "userID": user.userId.toString() } })
 			.subscribe(result => console.log(result), error => console.error(error));
 	}
+
 	getUserById(userId: String) {
 		const url = this.host + this.endpoint + "/getUserById";
 		return this.http.post<User>(url, { userId: userId })
@@ -85,4 +87,19 @@ export class UsersService {
 			)
 	}
 
+	getFund(userId: string): Observable<any> {
+		const url = this.host + this.endpoint + "/getFund/" + userId;
+		return this.http.get<any>(url);
+	}
+
+	getUserId(username: string): Observable<any> {
+		const url = this.host + this.endpoint + "/getUserId/" + username;
+		return this.http.get<any>(url);
+	}
+
+	decreaseFund(user: Object): Observable<any> {
+		const url = this.host + this.endpoint + "/decreaseFund";
+		return this.http.patch<any>(url, user);
+	}
 }
+

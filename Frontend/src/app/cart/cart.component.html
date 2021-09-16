@@ -1,1 +1,26 @@
-<p>cart works!</p>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Operation</th>
+            <th scope="col">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of cartService.cart; let i = index">
+            <td>{{productDetail[i].name}}</td>
+            <td>${{productDetail[i].price}}</td>
+            <td>{{product.quantity}}</td>
+            <td><input type="button" class="btn btn-danger" value="Delete" (click)="deleteProductFromCart(product, i)"></td>
+            <td>${{product.quantity * productDetail[i].price}}</td>
+        </tr>
+        <tr>
+            <th colspan="4">Total</th>
+            <th>${{cartService.total}}</th>
+        </tr>
+    </tbody>
+</table>
+<br>
+<input type="button" class="btn btn-success" [disabled]="cartService.cart.length == 0" (click)="checkout()" value="Checkout">
