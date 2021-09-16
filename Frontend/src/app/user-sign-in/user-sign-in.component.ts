@@ -23,7 +23,8 @@ export class UserSignInComponent implements OnInit {
     subscribe(result => 
       {
         if(result == "Success"){
-          this.router.navigate(['userpanel', userInfo.email]);
+          this.router.navigate(['userpanel'],{queryParams: {id:userInfo.email }});
+          
         }else{
           this.msg=result;
         }
