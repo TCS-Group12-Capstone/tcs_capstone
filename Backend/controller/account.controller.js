@@ -133,7 +133,6 @@ let getUserId = (request, response) => {
 
     accountModel.findOne(
         {email : user},
-        {_id : 1},
         (result, error) => {
             if (!error) {
                 response.json(result);

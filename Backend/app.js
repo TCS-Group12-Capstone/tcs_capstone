@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 
 let url = "mongodb+srv://phu:XBMQocHQxxpBqRUW@cluster0.3xrre.mongodb.net/testDB?retryWrites=true&w=majority";
 
-mongoose.connect(url).then(res => console.log("connected")).catch(error => console.log(error));
+mongoose.connect(url).then(res => console.log("Database connected")).catch(error => console.log(error));
 
 //http://localhost:1020/api/employee/addEmployee 
 //http://localhost:1020/api/employee/deleteEmployee 
@@ -38,6 +38,7 @@ app.use("/api/user", accountRouter);
 //http://localhost:1020/api/reports/getProductReports
 //http://localhost:1020/api/reports/getCustomerReports
 //http://localhost:1020/api/reports/insert
+
 app.use("/api/reports", reportsRouter);
 
 //http://localhost:1020/api/requests/send-requests

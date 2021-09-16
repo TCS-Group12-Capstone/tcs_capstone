@@ -24,7 +24,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
-      // get the username
       data => {
         this.username = data.user;
         this.updateCartTable();

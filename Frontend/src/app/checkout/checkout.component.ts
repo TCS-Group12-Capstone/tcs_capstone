@@ -100,5 +100,4 @@ export class CheckoutComponent implements OnInit {
 
     this.router.navigate(["orderConfirmation", tracking]);
   }
-
 }

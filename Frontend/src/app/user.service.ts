@@ -102,3 +102,4 @@ export class UsersService {
 		return this.http.patch<any>(url, user);
 	}
 }
+
