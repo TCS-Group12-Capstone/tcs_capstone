@@ -70,4 +70,12 @@ export class EmployeeService {
     return this.http.post("http://localhost:1020/api/reports/getProductReports", itemId);
   }
 
+  getCustomerReport(custId: any): Observable<any> {
+    return this.http.post("http://localhost:1020/api/reports/getCustomerReports", custId);
+  }
+
+  getAllProducts(): Observable<any> {
+    return this.http.get("http://localhost:1020/api/product/getAllProducts");
+  }
+
 }

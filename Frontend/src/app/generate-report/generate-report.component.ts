@@ -56,6 +56,7 @@ export class GenerateReportComponent implements OnInit {
   }
 
   monthlyReport(){
+    this.daily=false;
     this.weekly=false;
     this.customer=false;
     this.item=false;
@@ -64,8 +65,23 @@ export class GenerateReportComponent implements OnInit {
     subscribe(result=> this.array=result,error=>console.log(error))
     console.log(this.array);
     
-    this.daily=false;
+    
     this.monthly=true;
+  }
+
+  productReport(){
+    this.daily=false;
+    this.monthly=false;
+    this.weekly=false;
+    this.customer=false;
+    this.item=true;
+
+    let itmId = this.getIdRef.value;
+    this.generateReport.getItemReport(itmId).
+    subscribe(result=> this.array=result,error=>console.log(error))
+    console.log(this.array);
+
+    this.getIdRef.reset()
   }
 
   customerReport(){
@@ -75,18 +91,9 @@ export class GenerateReportComponent implements OnInit {
     this.customer=true;
     this.item=false;
 
-    this.getIdRef.reset()
-  }
-
-  productReport(){
-    this.daily=false;
-    this.monthly=false;
-    this.customer=false;
-    this.item=true;
-
     let itmId = this.getIdRef.value;
-    this.generateReport.getItemReport(itmId).
-    subscribe(result=> this.array=result,error=>console.log(error))
+    this.generateReport.getCustomerReport(itmId.id).
+    subscribe(result=> this.array = result,error=>console.log(error))
     console.log(this.array);
 
     this.getIdRef.reset()

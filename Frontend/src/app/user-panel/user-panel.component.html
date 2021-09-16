@@ -12,5 +12,14 @@
     (click)="orderStatus()"/> |
     <input type="button" value="Logout"
     (click)="logout()"/> 
-
+    <br>
+    <div *ngFor="let product of products" style="border: red solid; display: inline-block; height: auto;">
+        <!-- <img src="{{product.image}}"> -->
+        <!-- {{product.image}} -->
+        {{product.name}}
+        {{product.quantity}}
+        $ {{product.price/product.quantity}} each
+        <br>
+        <input type="button" value="Add to Cart">
+    </div>
 </div>
