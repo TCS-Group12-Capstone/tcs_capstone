@@ -22,8 +22,10 @@ let getOrders = (request, response) => {
     })
 }
 
-let updateStatus = (request, response) => {
-    orderModel.findByIdAndUpdate(request.params.id, {
+let updateOrderStatus = (request, response) => {
+    console.log(request.body);
+    const id = request.body._id
+    orderModel.findByIdAndUpdate(id, {
         $set: request.body
     }, (err, data) => {
         if (err) {
@@ -35,4 +37,4 @@ let updateStatus = (request, response) => {
     })
 }
 
-module.exports = { create, getOrders, updateStatus };
+module.exports = { create, getOrders, updateOrderStatus };

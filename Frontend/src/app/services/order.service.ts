@@ -16,4 +16,8 @@ export class OrderService {
   getOrders(): Observable<any> {
     return this.http.get("http://localhost:1020/api/order/getOrders");
   }
+
+  updateOrderStatus(updateStatus: Object): Observable<any> {
+    return this.http.put("http://localhost:1020/api/order/updateOrderStatus", updateStatus);
+  }
 }

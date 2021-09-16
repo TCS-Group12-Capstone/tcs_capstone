@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OrderService } from '../services/order.service';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-manage-orders',
@@ -10,6 +12,7 @@ import { OrderService } from '../services/order.service';
 export class ManageOrdersComponent implements OnInit {
 
   orderList = [{
+    _id: '',
     userId: '',		// this is the field _id from the Account collection
     status: '',		// default is “placed”, can be other value
     tracking: '',
@@ -17,8 +20,6 @@ export class ManageOrdersComponent implements OnInit {
     quantity: '',
     date: ''
   }]
-  order: any;
-  id: any;
 
   constructor(private orderStatus: OrderService, public actRoute: ActivatedRoute) { }
 
@@ -31,15 +32,17 @@ export class ManageOrdersComponent implements OnInit {
       })
   }
 
-  updateStatus() {
-    // console.log("Updating user");
-    // var id = this.actRoute.snapshot.paramMap.get('id');
-    // // user service to update the user info.
-    // this.orderStatus.updateOrderStatus(id, this.order).subscribe((response) => {
-    //   console.log(response.message);
-    //   console.log(this.order)
-    //   alert(response.message);
-    // });
+  updateStatus(id: any, formData: NgForm) {
+    console.log(id);
+    console.log(formData.value);
+    this.orderStatus.updateOrderStatus({ _id: id, status: formData.value.status }).
+      subscribe((result) => {
+        console.log(result);
+        alert("Order Status has been updated successfully!")
+        this.orderList = result
+        console.log(this.orderList);
+      })
+
   }
 
 }

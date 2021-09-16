@@ -10,15 +10,15 @@ import { sharedService } from '../shared-service/shared.service';
 export class UnlockUserComponent implements OnInit {
   userList = [{
     _id: '',
+    userId: '',
     email: '',
     reason: '',
   }];
-  user: any
 
   constructor(private lockedUser: EmployeeService, private shared: sharedService) { }
 
   ngOnInit(): void {
-    this.lockedUser.getLockedUser().
+    this.lockedUser.getAllRaiseTicket().
       subscribe((result) => {
         console.log(result)
         this.userList = result
@@ -26,12 +26,20 @@ export class UnlockUserComponent implements OnInit {
       })
   }
 
-  unlockUsers() {
-    this.lockedUser.unlockUser(this.user).subscribe((result) => {
-      console.log(result.messa);
+  unlockUsers(email: any, userId: string) {
+    console.log(email);
+    this.lockedUser.unlockUser({ email, lock: false }).subscribe((result) => {
+      console.log(result);
+      this.lockedUser.deleteRaiseTicket({ userId }).subscribe((response) => {
+        console.log(response);
+        this.lockedUser.getAllRaiseTicket().
+          subscribe((data) => {
+            console.log(data)
+            this.userList = data;
+            console.log(this.userList);
+          })
+      });
     })
-    console.log(this.user)
-
   }
 
 

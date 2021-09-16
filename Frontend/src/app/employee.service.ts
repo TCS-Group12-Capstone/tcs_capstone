@@ -75,14 +75,20 @@ export class EmployeeService {
     return this.http.get("http://localhost:1020/api/product/getAllProducts");
   }
 
-  getLockedUser(): Observable<any> {
-    return this.http.get("http://localhost:1020/api/lock/unlockUser");
+  getAllRaiseTicket(): Observable<any> {
+    return this.http.get("http://localhost:1020/api/lock/getAllRaiseTicket");
   }
 
-  unlockUser(user: any): Observable<any> {
-    //console.log(user)
-    return this.http.put("http://localhost:1020/api/lock/unlock", user);
+  unlockUser(user: Object): Observable<any> {
+    console.log('Employee Service User Object', user);
+    return this.http.put("http://localhost:1020/api/lock/unlockUser", user);
   }
+
+  deleteRaiseTicket(userId: Object): Observable<any> {
+    console.log('Employee Service User Object', userId);
+    return this.http.put("http://localhost:1020/api/lock/deleteRaiseTicket", userId);
+  }
+
   getCustomerReport(custId: any): Observable<any> {
     return this.http.post("http://localhost:1020/api/reports/getCustomerReports", custId);
   }

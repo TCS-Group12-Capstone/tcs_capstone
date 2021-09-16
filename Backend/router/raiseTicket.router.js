@@ -3,7 +3,8 @@ let router = express.Router();
 
 let raiseTicketController = require("../controller/raiseTicket.controller");
 
-router.get("/unlockUser", raiseTicketController.getAllRaiseTicket);
-router.put("/unlock/:id", raiseTicketController.unlockUser);
+router.get("/getAllRaiseTicket", raiseTicketController.getAllRaiseTicket);
+router.put("/unlockUser", raiseTicketController.unlockUser);
+router.put("/deleteRaiseTicket", raiseTicketController.deleteRaiseTicket);
 
 module.exports = router;

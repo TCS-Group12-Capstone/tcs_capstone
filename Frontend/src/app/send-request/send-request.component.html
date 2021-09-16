@@ -1,18 +1,21 @@
 <div>
-        <h2>Send Request</h2>
-        <form [formGroup]="request" (ngSubmit)="onSubmit()" method="POST">
-                <label>Employee Name</label>
-                <input type="text" formControlName="ename" /><br />
-                <label>product Name</label>
-                <input type="text" formControlName="productName" /><br />
-                <label>Quantity</label>
-                <input type="text" formControlName="restock" /><br />
+    <div class="container emp-profile" style="margin-top: 3%;">
+        <h2>Send Request</h2>
+        <hr>
+            <form [formGroup]="request" (ngSubmit)="onSubmit()" method="POST">
 
-                <input type="submit" value="Send Request" />
-                <input type="reset" value="reset" />
-            </form>
-        <br>
+                    <label>Employee Name</label>
+                    <input type="text" formControlName="ename" /><br />
+                    <label>product Name</label>
+                    <input type="text" formControlName="productName" /><br />
+                    <label>Quantity</label>
+                    <input type="text" formControlName="restock" /><br />
 
-         
-    <a routerLink="/employeePanel">Employee Page</a>
+                    <button class="btn btn-primary">Send</button> |
+            <button class="btn btn-danger" value="reset">Reset</button> |
+            <button class="btn btn-secondary" routerLink="/employeePanel">Home</button>
+        </form>
+
+
+    </div>
 </div>

@@ -18,7 +18,6 @@
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Status</th>
-                    <th>Action</th>
                 </tr>             
             </thead>
             <tbody>                   
@@ -33,10 +32,11 @@
                         {{order.quantity}}
                     </td>
                     <td>
-                        <form #orderForm='ngForm' (ngSubmit)='updateStatus()'>
+                        <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate></form> -->
+                        <form #orderForm='ngForm' (ngSubmit)='updateStatus(order._id, orderForm)' novalidate>
                             <div class='form-group mb-3'>  
-                                <label for="status">Status</label>
-                                <input type='text' class='form-control' placeholder='Update Order Status' name='status'>
+                                <input type='text' class='form-control' placeholder='Update Order Status' name='status'
+                                    ngModel>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
@@ -45,7 +45,7 @@
             </tbody>         
         </table>
         <div class="container">
-
+            <button class="btn btn-secondary" routerLink="/employeePanel">Home</button>
         </div>
             
     </div>
