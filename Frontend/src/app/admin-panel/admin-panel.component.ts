@@ -25,8 +25,23 @@ export class AdminPanelComponent implements OnInit {
     this.router.navigate(["/generateReport"]);
   }
 
+  addProduct(){
+    this.router.navigate(["/add"]);
+  }
+  
+  deleteProduct(){
+    this.router.navigate(["/delete"]);
+  }
+  
+  updateProduct(){
+    this.router.navigate(["/update"]);
+  }
+  
+  viewProduct(){
+    this.router.navigate(["/view"]);
+  }
+  
   logout(){
     this.router.navigate(["/adminSignIn"]);
   }
-
 }

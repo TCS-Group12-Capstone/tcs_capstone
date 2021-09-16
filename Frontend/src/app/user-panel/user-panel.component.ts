@@ -77,7 +77,7 @@ export class UserPanelComponent implements OnInit {
   }
 
   logout(){
-    this.router.navigate(["/userSignIn"]);
+    this.router.navigate([""]);
   }
 
   editProfile() {

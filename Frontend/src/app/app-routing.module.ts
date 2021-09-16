@@ -9,6 +9,10 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { AddComponent } from './add/add.component';
+import { DeleteComponent } from './delete/delete.component';
+import { UpdateComponent } from './update/update.component';
+import { ViewComponent } from './view/view.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CartComponent } from './cart/cart.component';
 import { SendRequestComponent } from './send-request/send-request.component';
@@ -39,6 +43,10 @@ const routes: Routes = [
   { path: "addEmployee", component: AddEmployeeComponent },
   { path: "deleteEmployee", component: DeleteEmployeeComponent },
   { path: "generateReport", component: GenerateReportComponent },
+  { path: "add", component: AddComponent },
+  { path: "delete", component: DeleteComponent },
+  { path: "update", component: UpdateComponent },
+  { path: "view", component: ViewComponent },
   { path: "SendRequest", component: SendRequestComponent },
   { path: "displayProducts", component: DisplayProductComponent },
   { path: "cart/:user", component: CartComponent },

@@ -9,6 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
+import { AddComponent } from './add/add.component';
+import { DeleteComponent } from './delete/delete.component';
+import { UpdateComponent } from './update/update.component';
+import { ViewComponent } from './view/view.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
@@ -40,6 +44,10 @@ import { TrackingNumberComponent } from './tracking-number/tracking-number.compo
     AddEmployeeComponent,
     DeleteEmployeeComponent,
     GenerateReportComponent,
+    AddComponent,
+    DeleteComponent,
+    UpdateComponent,
+    ViewComponent,
     AdminPanelComponent,
     UserPanelComponent,
     UserSignUpComponent,

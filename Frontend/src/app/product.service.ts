@@ -16,12 +16,12 @@ export interface ProductItem {
 export class ProductsService {
 
 	host = "http://localhost:1020";
-	endpoint = "/inventory";
+	endpoint = "/api/product";
 
 	constructor(private http: HttpClient) { }
 
 	getAll() {
-		const url = this.host + this.endpoint + "/getAll";
+		const url = this.host + this.endpoint + "/getAllProducts";
 		return this.http.get<ProductItem[]>(url)
 			.pipe(
 				tap(data => console.log(data)),
@@ -30,7 +30,7 @@ export class ProductsService {
 	}
 
 	addProduct(product: { name: String, price: Number, quantity: Number }) {
-		const url = this.host + this.endpoint + "/addOne";
+		const url = this.host + this.endpoint + "/getProducts";
 		this.http.post(url, product)
 			.subscribe(result => console.log(result), error => console.error(error));
 	}
