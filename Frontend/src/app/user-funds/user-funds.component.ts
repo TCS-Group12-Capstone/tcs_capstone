@@ -33,6 +33,10 @@ export class UserFundsComponent implements OnInit {
     )
   }
 
+  goBack() {
+    this.router.navigate(['userpanel'],{queryParams: {id:this.email }});
+  }
+
   addFunds() {
     let data = this.fundRef.value;
     if(!data.account || !data.fundAmt) {
