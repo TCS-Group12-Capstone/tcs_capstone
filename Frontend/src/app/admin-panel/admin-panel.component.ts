@@ -16,14 +16,17 @@ export class AdminPanelComponent implements OnInit {
   addEmployee(){
     this.router.navigate(["/addEmployee"]);
   }
+  
   deleteEmployee(){
     this.router.navigate(["/deleteEmployee"]);
   }
+
   generateReport(){
     this.router.navigate(["/generateReport"]);
   }
+
   logout(){
-    
+    this.router.navigate(["/adminSignIn"]);
   }
 
 }
