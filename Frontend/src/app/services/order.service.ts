@@ -16,5 +16,9 @@ export class OrderService {
   getTracking(tracking: String): Observable<any> {
     return this.http.post("http://localhost:1020/api/order/getTracking", { tracking: tracking });
   }
+
+  getStatus(tracking: String): Observable<any> {
+    return this.http.post("http://localhost:1020/api/order/getStatus", { tracking: tracking });
+  }
 }
 

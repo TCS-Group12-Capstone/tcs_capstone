@@ -22,4 +22,10 @@ let getTracking = async (request, response) => {
     }
 }
 
-module.exports = {create, getTracking};
+let getStatus = async (request, response) => {
+    let order = request.body;
+    orderInfo = await orderModel.findOne({ tracking: order.tracking});
+    response.send({status:orderInfo.status});
+}
+
+module.exports = {create, getTracking, getStatus};
