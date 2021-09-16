@@ -19,6 +19,7 @@ router.put("/updateUserProfile",accountController.updateUserProfile);
 router.patch("/decreaseFund", accountController.decreaseFund);
 router.get("/getFund/:userId", accountController.getFund);
 router.get("/getUserId/:username", accountController.getUserId);
+router.post("/verifyEmailAddress", accountController.verifyEmailAddress)
 
 module.exports = router;
 
