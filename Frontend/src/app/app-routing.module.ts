@@ -23,6 +23,7 @@ import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { RaiseTicketComponent } from './raise-ticket/raise-ticket.component';
 import { AdminSignInComponent } from './admin-sign-in/admin-sign-in.component';
+import { TrackingNumberComponent} from './tracking-number/tracking-number.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: "orderStatus", component: OrderStatusComponent},
   { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent},
   { path: "adminPanel", component: AdminPanelComponent},
+  { path: "tracking", component: TrackingNumberComponent},
   { path: "raiseTicket", component: RaiseTicketComponent}
 ];
 

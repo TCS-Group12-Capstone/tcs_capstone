@@ -89,6 +89,6 @@ export class UserPanelComponent implements OnInit {
   }
 
   orderStatus() {
-    this.router.navigate(["/orderStatus"]);
+    this.router.navigate(["/tracking"]);
   }
 }
