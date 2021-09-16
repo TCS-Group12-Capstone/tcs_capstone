@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductItem, ProductsService } from 'src/app/product.service';
+
 
 @Component({
   selector: 'app-view',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+  products: ProductItem[] = []
+	productsColumn = ["productId", "name", "price", "quantity"]
+
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.getAll()
+    .subscribe(data => this.products = data);
   }
 
+  asCurrency(value: Number) {
+		return value.toLocaleString('en-US', {
+			style: 'currency',
+			currency: 'USD',
+		});
+	}
 }

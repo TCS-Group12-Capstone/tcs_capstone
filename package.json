@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@angular/material": "^12.2.6",
+    "@angular/router": "^12.2.6",
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1"
+  }
+}
