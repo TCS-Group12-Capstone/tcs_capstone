@@ -1,46 +1,42 @@
 <div style="height:100vh">
     <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
-    <div class="card bg-dark">
-        <div class="card-body">
-            <h4 class="card-title" style="text-align: center;">Employee Sign In</h4>
-            <form class="form-inline" [formGroup]="signInRef" (ngSubmit)="checkUser()">
-                <input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password"/><br/>
-                <div style="text-align: center;">
-                    <button class="btn btn-info" style="margin-inline: 10px;"type="submit">Login</button>
-                    <button class="btn btn-info" type="reset">Reset</button>
-                    <br/>
-                    {{msg}}
-                    <br>
-                </div>
-            </form>
+        <div class="card bg-dark">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align: center;">Employee Sign In</h4>
+                <form class="form-inline" [formGroup]="signInRef" (ngSubmit)="checkUser()">
+                    <input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email"
+                        placeholder="Email" /><br />
+                    <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password"
+                        placeholder="Password" /><br />
+                    <div style="text-align: center;">
+                        <button class="btn btn-info" style="margin-inline: 10px;" type="submit">Login</button>
+                        <button class="btn btn-info" type="reset">Reset</button>
+                        <br />
+                        {{msg}}
+                        <br>
+                    </div>
+                </form>
+            </div>
         </div>
+        <a routerLink="/userSignUp">SignUp Page</a>
+        <button class="btn btn-secondary" routerLink="/raisedTicket">Raise Ticket</button>
     </div>
-    <a routerLink="/userSignUp">SignUp Page</a> 
-    <button class="btn btn-secondary" (click)="raiseTicket()">Raise Ticket</button>
-    <!-- <input type="button" value="Raise Ticket"
-    (click)="raiseTicket()"/> -->
-</div>
-
-
-<!-- <div>
-    <h2>Log In Page</h2>
-    <form [formGroup]="signInRef" (ngSubmit)="checkUser()">
-        
-        <label>Email </label>
-        <input type="text" formControlName="email"/><br/>
-        <label>Password </label>
-        <input type="password" formControlName="password"/><br/>
-        
-        <input type="submit" value="Sign In" [disabled]="!signInRef.valid"/>
-        <input type="reset" value="reset"/>
+    <form class="form-inline" [formGroup]="signInRef" (ngSubmit)="checkUser()">
+        <input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email"
+            placeholder="Email" /><br />
+        <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password"
+            placeholder="Password" /><br />
+        <div style="text-align: center;">
+            <button class="btn btn-info" style="margin-inline: 10px;" type="submit"
+                [disabled]="!signInRef.valid">Login</button>
+            <button class="btn btn-info" type="reset">Reset</button>
+            <br />
+            {{msg}}
+            <br>
+        </div>
     </form>
-
-    <br/>
-    {{msg}}
-    <br>
-
-    <a routerLink="/">Login Page</a> |
-    
-</div> -->
-
+    <div style="text-align: center;">
+        <a routerLink="/userSignUp"> <button class="btn btn-secondary" style="margin-inline:5px">Sign Up</button></a>
+        <button class="btn btn-secondary" routerLink="/raiseTicket" style="margin-inline:5px">Raise Ticket</button>
+    </div>
+</div>

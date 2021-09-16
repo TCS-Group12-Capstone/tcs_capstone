@@ -26,6 +26,10 @@ export class EditUserProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goBack() {
+    this.router.navigate(['userpanel'],{queryParams: {id:this.email }});
+  }
+
   updateUserInfo(){
     let data = this.userProfileRef.value;
     data.currEmail=this.email;

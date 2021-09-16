@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div>
     <h2>Account Create</h2>
     <form [formGroup]="signUpRef" (ngSubmit)="accountCreate()">
@@ -24,5 +25,31 @@
     <br>
     <!-- <a routerLink="/">Login Page</a> | -->
     <a routerLink="/userSignIn">Sign In Page</a>
+=======
+<div style="height:100vh">
+    <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;">Create Account</h4>
+            <form [formGroup]="signUpRef" (ngSubmit)="accountCreate()">
+                First Name <input class="form-control mb-2 mr-sm-2" type="text" id="fname" formControlName="lname" placeholder="First Name"/>
+                Last Name <input class="form-control mb-2 mr-sm-2" type="text" id="lname" formControlName="fname" placeholder="Last Name"/>
+                Email<input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/>
+                Password<input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password"/>
+                DOB<input class="form-control mb-2 mr-sm-2" type="Date" id="DOB" formControlName="DOB" placeholder="Birth Date"/>
+                Phone<input class="form-control mb-2 mr-sm-2" type="text" id="phone" formControlName="phone" placeholder="Phone No."/>
+                Address<input class="form-control mb-2 mr-sm-2" type="text" id="address" formControlName="address" placeholder="Address"/>
+                <div style="text-align: center;">
+                    <button class="btn btn-info" style="margin-inline: 10px;"type="submit" [disabled]="!signUpRef.valid">Sign Up</button>
+                    <button class="btn btn-info" type="reset">Reset</button><br><br>
+                    <a routerLink="/userSignIn">Sign In Page</a>
+                    <br/>
+                    {{msg}}
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+>>>>>>> origin/main
     
 </div>

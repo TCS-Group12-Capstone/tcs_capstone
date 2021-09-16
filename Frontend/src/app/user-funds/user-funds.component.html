@@ -4,13 +4,15 @@
         <div class="card-body">
             <h4 class="card-title" style="text-align: center;">Add Funds</h4>
             <form [formGroup]="fundRef" (ngSubmit)="addFunds()">
-                <input class="form-control mb-2 mr-sm-2" type="text" formControlName="account" placeholder="Account #"/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="number" formControlName="fund" placeholder="Amount"/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="number" formControlName="account" placeholder="Account #" required/><br/>
+                <input class="form-control mb-2 mr-sm-2" type="number" formControlName="fundAmt" placeholder="Amount" required/><br/>
                 <div style="text-align: center;">
                     <button class="btn btn-info" style="margin-inline: 10px;"type="submit">Add Funds</button>
-                    <button class="btn btn-info" type="reset">Reset</button>
+                    <button class="btn btn-info" type="reset">Reset</button><br/><br/>
                 </div>
             </form>
+            <button class="btn btn-info col-12" style="margin-top: 10px;" (click)="goBack()">Back</button>
+            <h5 style="text-align: center;">{{msg}}</h5>
         </div>
     </div>
 </div>
