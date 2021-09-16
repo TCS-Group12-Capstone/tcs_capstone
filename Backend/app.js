@@ -29,6 +29,7 @@ app.use("/api/employee", accountRouter);
 //http://localhost:1020/api/user/getFund/<userId>
 //http://localhost:1020/api/user/getUserId/<username>
 //http://localhost:1020/api/user/decreaseFund
+//http://localhost:1020/api/user/verifyEmailAddress
 app.use("/api/user", accountRouter);
 
 //http://localhost:1020/api/reports/getAllReports

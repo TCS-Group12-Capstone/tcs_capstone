@@ -1,0 +1,12 @@
+<form [formGroup]="ticketForm" (ngSubmit)="submitTicket()">
+    <label for="email">Email: </label>
+    <input type="email" formControlName="email">
+    <br>
+    <label for="reason">Reason: </label>
+    <input type="text" formControlName="reason">
+    <br>
+    <button class="btn btn-success" type="submit" [disabled]="!ticketForm.valid">Submit</button>
+    <button class="btn btn-danger" type="reset">Clear</button>
+</form> 
+<br>
+{{msg}}

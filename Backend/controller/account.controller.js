@@ -1,6 +1,7 @@
 
 const { request, response } = require("express");
 let accountModel = require("../model/account.model");
+let raisedTicketModel = require("../model/raisedTicket.model")
 
 let addEmployee = async (request, response) => {
     let employee = request.body;    // receive the data from post method
@@ -118,7 +119,7 @@ let getFund = (request, response) => {
     accountModel.findOne(
         {_id : user},
         {_id : 0, fund : 1}, // only get the field "fund"
-        (result, error) => {
+        (error, result) => {
             if (!error) {
                 response.json(result);
             } else {
@@ -133,7 +134,7 @@ let getUserId = (request, response) => {
 
     accountModel.findOne(
         {email : user},
-        (result, error) => {
+        (error, result) => {
             if (!error) {
                 response.json(result);
             } else {
@@ -149,9 +150,43 @@ let decreaseFund = (request, response) => {
     accountModel.updateOne(
         {_id : user.userId},
         {$inc : {fund : -user.amount}},
-        (result, error) => {
+        (error, result) => {
             if (!error) {
                 response.json(result);
+            } else {
+                response.json(error);
+            }
+        }
+    )
+}
+
+let verifyEmailAddress = (request, response) => {
+    let ticket = request.body;
+
+    accountModel.findOne(
+        {$and : [{email : ticket.email}, {type : "user"}]},
+        (error, account) => {
+            if (!error) {
+                if (account == null) {
+                    response.json(ticket.email + " is not registered in our system!");
+                } else {
+
+                    if (!account.lock) {
+                        response.json("Account is not locked!");
+                    } else {
+                        response.json("Ticket sent successfully");
+
+                        raisedTicketModel.insertMany({
+                            userId : account._id,
+                            email : account.email,
+                            reason : ticket.reason
+                        }), (insertError, insertResult) => {
+                            if (insertError) {
+                                response.json(insertError);
+                            }
+                        }
+                    }
+                }
             } else {
                 response.json(error);
             }
@@ -162,5 +197,6 @@ let decreaseFund = (request, response) => {
 module.exports = { 
     addEmployee, deleteEmployee, signUp, 
     signIn, updateProfile, getProfile, 
-    empSignIn, getFund, getUserId, decreaseFund
+    empSignIn, getFund, getUserId, decreaseFund,
+    verifyEmailAddress
 }
