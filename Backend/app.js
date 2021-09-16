@@ -44,7 +44,6 @@ app.use("/api/user", accountRouter);
 //http://localhost:1020/api/reports/getProductReports
 //http://localhost:1020/api/reports/getCustomerReports
 //http://localhost:1020/api/reports/insert
-
 app.use("/api/reports", reportsRouter);
 
 //http://localhost:1020/api/requests/send-requests
@@ -54,7 +53,6 @@ app.use("/api/requests", requestRouter);
 //http://localhost:1020/api/product/getProducts
 //http://localhost:1020/api/product/getAllProducts
 //http://localhost:1020/api/product/decreaseAmount
-
 app.use("/api/product", productRouter);
 
 //http://localhost:1020/api/cart/addCart

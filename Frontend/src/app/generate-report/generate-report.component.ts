@@ -92,7 +92,7 @@ export class GenerateReportComponent implements OnInit {
     this.item=false;
 
     let itmId = this.getIdRef.value;
-    this.generateReport.getCustomerReport(itmId.id).
+    this.generateReport.getCustomerReport(itmId).
     subscribe(result=> this.array = result,error=>console.log(error))
     console.log(this.array);
 

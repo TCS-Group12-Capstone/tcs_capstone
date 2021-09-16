@@ -75,12 +75,9 @@ let getProductReports = (request,response)=> {
 
 }
 
-
-
-
 let getCustomerReports = (request,response)=> {
-    let itmId = request.body;
-    reportsModel.find({itemId:itmId.id},(err,data) => {
+    let itemId = request.body;
+    reportsModel.find({customerId:itemId.id},(err,data) => {
         if(!err){
             response.json(data);
         }else {
