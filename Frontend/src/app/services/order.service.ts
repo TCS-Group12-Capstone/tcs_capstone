@@ -13,7 +13,15 @@ export class OrderService {
     return this.http.post<any>("http://localhost:1020/api/order/create", order);
   }
 
-  getTracking(tracking: String): Observable<any> {
+  getOrders(): Observable<any> {
+    return this.http.get("http://localhost:1020/api/order/getOrders");
+  }
+
+  updateOrderStatus(updateStatus: Object): Observable<any> {
+    return this.http.put("http://localhost:1020/api/order/updateOrderStatus", updateStatus);
+  }
+
+   getTracking(tracking: String): Observable<any> {
     return this.http.post("http://localhost:1020/api/order/getTracking", { tracking: tracking });
   }
 

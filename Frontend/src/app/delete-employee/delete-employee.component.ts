@@ -20,11 +20,14 @@ export class DeleteEmployeeComponent implements OnInit {
 
   deleteEmp(){
     let delEmail = this.deleteRef.value;
+
     console.log(delEmail)
+    
     this.deleteEmployee.empAccountDelete(delEmail.email).
     subscribe(result=>this.msg=result,err=>console.log(err))
 
     this.deleteRef.reset();
+
   }
 
 }

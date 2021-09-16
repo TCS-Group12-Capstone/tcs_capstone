@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container outerbox">
+        <h3>Manage Orders</h3>
+        <table class="table innerbox">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>             
+            </thead>
+            <tbody>                   
+                <tr *ngFor="let order of orderList">
+                    <td>
+                        {{order.userId}}
+                    </td>
+                    <td>
+                        {{order.productName}}
+                    </td>
+                    <td>
+                        {{order.quantity}}
+                    </td>
+                    <td>
+                        <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate></form> -->
+                        <form #orderForm='ngForm' (ngSubmit)='updateStatus(order._id, orderForm)' novalidate>
+                            <div class='form-group mb-3'>  
+                                <input type='text' class='form-control' placeholder='Update Order Status' name='status'
+                                    ngModel>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>         
+        </table>
+        <div class="container">
+            <button class="btn btn-secondary" routerLink="/employeePanel">Home</button>
+        </div>
+            
+    </div>
+</body>
+
+</html>
