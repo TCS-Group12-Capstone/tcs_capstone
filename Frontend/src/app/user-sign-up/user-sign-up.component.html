@@ -4,13 +4,13 @@
         <div class="card-body">
             <h4 class="card-title" style="text-align: center;">Create Account</h4>
             <form [formGroup]="signUpRef" (ngSubmit)="accountCreate()">
-                <input class="form-control mb-2 mr-sm-2" type="text" id="fname" formControlName="lname" placeholder="First Name"/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="text" id="lname" formControlName="fname" placeholder="Last Name"/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password"/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="Date" id="DOB" formControlName="DOB" placeholder="Birth Date"/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="text" id="phone" formControlName="phone" placeholder="Phone No."/><br/>
-                <input class="form-control mb-2 mr-sm-2" type="text" id="address" formControlName="address" placeholder="Address"/><br/>
+                First Name <input class="form-control mb-2 mr-sm-2" type="text" id="fname" formControlName="lname" placeholder="First Name"/><br/>
+                Last Name <input class="form-control mb-2 mr-sm-2" type="text" id="lname" formControlName="fname" placeholder="Last Name"/><br/>
+                Email<input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/><br/>
+                Password<input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password"/><br/>
+                DOB<input class="form-control mb-2 mr-sm-2" type="Date" id="DOB" formControlName="DOB" placeholder="Birth Date"/><br/>
+                Phone<input class="form-control mb-2 mr-sm-2" type="text" id="phone" formControlName="phone" placeholder="Phone No."/><br/>
+                Address<input class="form-control mb-2 mr-sm-2" type="text" id="address" formControlName="address" placeholder="Address"/><br/>
                 <div style="text-align: center;">
                     <button class="btn btn-info" style="margin-inline: 10px;"type="submit" [disabled]="!signUpRef.valid">Sign Up</button>
                     <button class="btn btn-info" type="reset">Reset</button>
