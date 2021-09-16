@@ -75,9 +75,9 @@ export class UserPanelComponent implements OnInit {
   goToCart() {
     this.router.navigate(["cart", this.userId]);
   }
-  
-  logout() {
-    this.router.navigate([""]);
+
+  logout(){
+    this.router.navigate(["/userSignIn"]);
   }
 
   editProfile() {
@@ -86,7 +86,6 @@ export class UserPanelComponent implements OnInit {
 
   funds() {
     this.router.navigate(["/userFunds"], { queryParams: { email: this.email } });
-
   }
 
   orderStatus() {
