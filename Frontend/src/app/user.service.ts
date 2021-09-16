@@ -87,8 +87,19 @@ export class UsersService {
 			)
 	}
 
-	getUserFund(userId: string): Observable<any> {
+	getFund(userId: string): Observable<any> {
 		const url = this.host + this.endpoint + "/getFund/" + userId;
 		return this.http.get<any>(url);
 	}
+
+	getUserId(username: string): Observable<any> {
+		const url = this.host + this.endpoint + "/getUserId/" + username;
+		return this.http.get<any>(url);
+	}
+
+	decreaseFund(user: Object): Observable<any> {
+		const url = this.host + this.endpoint + "/decreaseFund";
+		return this.http.patch<any>(url, user);
+	}
 }
+

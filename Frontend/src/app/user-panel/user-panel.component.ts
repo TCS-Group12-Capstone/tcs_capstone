@@ -10,27 +10,29 @@ import { EmployeeService } from '../employee.service';
 })
 export class UserPanelComponent implements OnInit {
   userName?:String;
+  email = "";
   constructor(public activateRouter:ActivatedRoute,public router:Router,public allProducts:EmployeeService) { }
  products:Array<Product>=[];
 
-
   ngOnInit(): void {
-    this.activateRouter.params.subscribe(data => this.userName=data.email);
-
+    this.activateRouter.queryParams.subscribe(data => {
+      this.email=data.id;
+      console.log(this.email);
+    });
     this.allProducts.getAllProducts().
     subscribe(result=>
       this.products=result
       ,error=>console.log(error))
-
+   
   }
   
 
 
   logout(){
-    this.router.navigate(["/userSignIn"]);
+    this.router.navigate([""]);
   }
   editProfile(){
-    this.router.navigate(["/editUserProfile"]);
+    this.router.navigate(["/editUserProfile"],{queryParams:{email:this.email}});
   }
   funds(){
     this.router.navigate(["/userFunds"]);

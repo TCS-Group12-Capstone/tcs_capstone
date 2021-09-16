@@ -26,6 +26,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { EditEmployeeProfileComponent } from './edit-employee-profile/edit-employee-profile.component';
 import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
+import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { OrderStatusComponent } from './order-status/order-status.component';
     CheckoutComponent,
     EditEmployeeProfileComponent,
     UserFundsComponent,
-    OrderStatusComponent
+    OrderStatusComponent,
+    OrderConfirmationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,2 +1,29 @@
-<h2>{{username}}</h2>
-<h3>Fund Available: ${{userInfo.fund}}</h3>
+<table class="table table-bordered table-striped table-hover">
+    <tbody>
+        <tr>
+            <td scope="row">Fund available:</td>
+            <td>${{userFund}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Product(s) Cost:</td>
+            <td>-${{cartService.total}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Shipping:</td>
+            <td>-${{shipping}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Tax:</td>
+            <td>-${{tax}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Remaining Fund:</th>
+            <th>${{remainFund}}</th>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h4 *ngIf="remainFund <= 0">Insufficient fund, please recharge!</h4>
+<input type="button" class="btn btn-success" [disabled]="remainFund <= 0" (click)="purchase()" value="Purchase">
+<br><br>
+<input type="button" class="btn btn-primary" value="Recharge">

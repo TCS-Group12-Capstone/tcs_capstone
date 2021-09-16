@@ -8,6 +8,9 @@ import { Cart } from '../classes/cart';
 })
 export class CartService {
 
+  public total: number = 0.00;
+  public cart: Cart[] = [];
+
   constructor(public http: HttpClient) { }
 
   addCart(product: Cart): Observable<any> {
