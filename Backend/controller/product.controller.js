@@ -33,7 +33,7 @@ let decreaseAmount = (request, response) => {
     productModel.updateOne(
         {_id : product._id},
         {$inc : {quantity : -product.amount}},
-        (result, error) => {
+        (error, result) => {
             if (!error) {
                 response.json(result);
             } else {

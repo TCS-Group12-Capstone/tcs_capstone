@@ -9,6 +9,7 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./user-panel.component.css']
 })
 export class UserPanelComponent implements OnInit {
+
   userName?:String;
   email = "";
   constructor(public activateRouter:ActivatedRoute,public router:Router,public allProducts:EmployeeService) { }
@@ -31,16 +32,18 @@ export class UserPanelComponent implements OnInit {
   logout(){
     this.router.navigate([""]);
   }
-  editProfile(){
-    this.router.navigate(["/editUserProfile"],{queryParams:{email:this.email}});
+  editProfile() {
+    this.router.navigate(["/editUserProfile"], { queryParams: { email: this.email } });
   }
+  
   funds(){
     this.router.navigate(["/userFunds"],{queryParams:{email:this.email}});
+
   }
-  cart(){
+  cart() {
     //this.router.navigate(["/userSignIn"]);
   }
-  orderStatus(){
+  orderStatus() {
     this.router.navigate(["/orderStatus"]);
   }
 }
