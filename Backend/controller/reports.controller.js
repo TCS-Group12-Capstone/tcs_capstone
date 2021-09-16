@@ -15,9 +15,11 @@ let getAllReports = (request,response)=> {
 
 
 let getDailyReport = (request,response)=> {
-    let today = new Date().toLocaleDateString()
+    let today = new Date();
+    today.setHours(0,0,0,0,0)
     console.log(today)
-    reportsModel.find({date:today},(err,data) => {
+    today.setDate(today.getDate() - 1)
+    reportsModel.find({date:{$gt:today}},(err,data) => {
         if(!err){
             response.json(data);
         }else {
@@ -29,8 +31,11 @@ let getDailyReport = (request,response)=> {
 
 
 let getMonthlyReports = (request,response)=> {
-
-    reportsModel.find({date:{ $gte: new Date('2021/09/01') }},(err,data) => {
+    let d = new Date();
+    d.setHours(0,0,0,0,0)
+    d.setDate(d.getDate() - 30);
+    console.log(d)
+    reportsModel.find({date:{ $gte: d }},(err,data) => {
         if(!err){
             response.json(data);
         }else {
@@ -43,23 +48,10 @@ let getMonthlyReports = (request,response)=> {
 let getWeeklyReports = (request,response)=> {
 
     let d = new Date();
-    d.setDate(d.getDate() - 3);
+    d.setDate(d.getDate() - 7);
     // let week = d.toLocaleDateString();
 
     reportsModel.find({date:{$gt:new Date(d)}},(err,data) => {
-        if(!err){
-            response.json(data);
-        }else {
-             response.json(err);   
-        }
-    })
-
-}
-
-
-let getCustomerReports = (request,response)=> {
-    let custId = request.body; 
-    reportsModel.find({},(err,data) => {
         if(!err){
             response.json(data);
         }else {
@@ -82,7 +74,23 @@ let getProductReports = (request,response)=> {
 
 }
 
-module.exports = { getAllReports,getDailyReport,getMonthlyReports,getWeeklyReports,getCustomerReports,getProductReports}
+
+
+
+let getCustomerReports = (request,response)=> {
+    let itmId = request.body;
+    reportsModel.find({itemId:itmId.id},(err,data) => {
+        if(!err){
+            response.json(data);
+        }else {
+             response.json(err);   
+        }
+    })
+
+}
+
+
+module.exports = { getAllReports,getDailyReport,getMonthlyReports,getWeeklyReports,getProductReports,getCustomerReports}
 
 
 
