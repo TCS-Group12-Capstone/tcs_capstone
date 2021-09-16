@@ -57,11 +57,6 @@ export class EmployeeService {
   getMonthlyReport(): Observable<any> {
     return this.http.get("http://localhost:1020/api/reports/getMonthlyReports");
   }
-  
-  empSignIn(userInfo:Employee):Observable<any>{
-    return this.http.post("http://localhost:1020/api/user/empSignIn",userInfo,
-    {responseType:'text'});
-  }
 
   getWeeklyReport(): Observable<any> {
     return this.http.get("http://localhost:1020/api/reports/getWeeklyReports");
