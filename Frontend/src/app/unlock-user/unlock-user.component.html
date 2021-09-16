@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container outerbox">
+        <h3>Unlock Users</h3>
+
+        <form #profileForm='ngForm' (ngSubmit)='unlockUsers()'>
+            <div class='form-group mb-3'>  
+                <label for="email">Email</label>
+                <input type='text' class='form-control' placeholder='Enter Email' name='email'>
+            </div>
+            <button type="submit" class="btn btn-primary">Unlock</button>
+        </form>
+            
+
+        <table class="table innerbox">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Email</th>
+                    <th>Reason</th>
+                    <th>Action</th>
+                </tr>             
+            </thead>
+            <tbody>                   
+                <tr *ngFor="let user of userList">
+                    <td>
+                        {{user._id}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td>
+                        {{user.reason}}
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" (click)="unlockUsers()">Unlock</button>
+                    </td>
+                </tr>
+            </tbody>         
+        </table>
+    </div>
+</body>
+
+</html>

@@ -8,6 +8,7 @@ let productRouter = require("./router/product.router");
 let cartRouter = require("./router/cart.router");
 let requestRouter = require("./router/request.router");
 let orderRouter = require("./router/order.router");
+let raiseTicketRouter = require("./router/raiseTicket.router");
 
 const { request } = require("express");
 
@@ -57,6 +58,9 @@ app.use("/api/cart", cartRouter);
 
 //http://localhost:1020/api/order/create
 app.use("/api/order", orderRouter);
+
+//http://localhost:1020/api/employee/unlock
+app.use("/api/lock", raiseTicketRouter);
 
 app.listen(1020, () => console.log("Server running on port number 1020"))
 

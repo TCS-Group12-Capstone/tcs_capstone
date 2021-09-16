@@ -28,6 +28,8 @@ import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { sharedService } from './shared-service/shared.service';
+import { UnlockUserComponent } from './unlock-user/unlock-user.component';
+import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { sharedService } from './shared-service/shared.service';
     EditEmployeeProfileComponent,
     UserFundsComponent,
     OrderStatusComponent,
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
+    UnlockUserComponent,
+    ManageOrdersComponent
   ],
   imports: [
     BrowserModule,

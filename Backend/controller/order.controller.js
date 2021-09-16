@@ -1,7 +1,8 @@
+const { response } = require("express");
 let orderModel = require("../model/order.model");
 
 let create = (request, response) => {
-    let order = request.body; 
+    let order = request.body;
 
     orderModel.insertMany(order, (result, error) => {
         if (!error) {
@@ -11,5 +12,27 @@ let create = (request, response) => {
         }
     })
 }
+let getOrders = (request, response) => {
+    orderModel.find({}, (err, result) => {
+        if (!err) {
+            response.send(result);
+        } else {
+            response.send(err)
+        }
+    })
+}
 
-module.exports = {create};
+let updateStatus = (request, response) => {
+    orderModel.findByIdAndUpdate(request.params.id, {
+        $set: request.body
+    }, (err, data) => {
+        if (err) {
+            throw err
+        } else {
+            response.json(data);
+            console.log("Order Status Updated Successfully!");
+        }
+    })
+}
+
+module.exports = { create, getOrders, updateStatus };

@@ -21,12 +21,14 @@ import { UserFundsComponent } from './user-funds/user-funds.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { UnlockUserComponent } from './unlock-user/unlock-user.component';
+import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
-  { path: "userpanel",component:UserPanelComponent},
-  { path: "userSignUp",component:UserSignUpComponent},
-  { path: "userSignIn",component:UserSignInComponent},
+  { path: "userpanel", component: UserPanelComponent },
+  { path: "userSignUp", component: UserSignUpComponent },
+  { path: "userSignIn", component: UserSignInComponent },
   { path: "adminSignIn", component: SignInComponent },
   { path: "employeeSignIn", component: EmployeeSigninComponent },
   { path: "employeePanel", component: EmployeePanelComponent },
@@ -34,16 +36,18 @@ const routes: Routes = [
   { path: "deleteEmployee", component: DeleteEmployeeComponent },
   { path: "generateReport", component: GenerateReportComponent },
   { path: "SendRequest", component: SendRequestComponent },
-  { path: "displayProducts", component: DisplayProductComponent},
-  { path: "cart/:user", component: CartComponent},
-  { path: "checkout/:user", component: CheckoutComponent},
   { path: "displayProducts", component: DisplayProductComponent },
-  { path: "profileEdit", component: EditEmployeeProfileComponent},
-  { path: "editUserProfile", component: EditUserProfileComponent},
-  { path: "userFunds", component: UserFundsComponent},
-  { path: "orderStatus", component: OrderStatusComponent},
-  { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent},
-  { path: "adminPanel", component: AdminPanelComponent}
+  { path: "cart/:user", component: CartComponent },
+  { path: "checkout/:user", component: CheckoutComponent },
+  { path: "displayProducts", component: DisplayProductComponent },
+  { path: "profileEdit", component: EditEmployeeProfileComponent },
+  { path: "editUserProfile", component: EditUserProfileComponent },
+  { path: "userFunds", component: UserFundsComponent },
+  { path: "orderStatus", component: OrderStatusComponent },
+  { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent },
+  { path: "adminPanel", component: AdminPanelComponent },
+  { path: "unlockUser", component: UnlockUserComponent },
+  { path: "UpdateOrderStatus", component: ManageOrdersComponent }
 ];
 
 @NgModule({

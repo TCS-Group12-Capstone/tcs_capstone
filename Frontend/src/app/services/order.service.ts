@@ -12,4 +12,8 @@ export class OrderService {
   create(order: Object): Observable<any> {
     return this.http.post<any>("http://localhost:1020/api/order/create", order);
   }
+
+  getOrders(): Observable<any> {
+    return this.http.get("http://localhost:1020/api/order/getOrders");
+  }
 }
