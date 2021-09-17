@@ -1,19 +1,22 @@
-<div>
-    <h2>Add Employee</h2>
-    <form [formGroup]="loginRef" (ngSubmit)="addEmp()">
-        <label>Employee First Name</label>
-        <input type="text" formControlName="fname"/><br/>
-        <label>Employee Last Name</label>
-        <input type="text" formControlName="lname"/><br/>
-        <label>EmailId</label>
-        <input type="text" formControlName="email"/><br/>
-        <label>Password</label>
-        <input type="password" formControlName="password"/><br/>
-        <input type="submit" value="Add Employee"/>
-        <input type="reset" value="reset"/>
-    </form>
-    <br>
-    {{msg}}
-    <br>
-     <a routerLink="/">Main Page</a> 
+<div style="height:100vh">
+    <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;">Add Employee</h4>
+            <form [formGroup]="loginRef" (ngSubmit)="addEmp()">
+                First Name <input class="form-control mb-2 mr-sm-2" type="text" id="fname" formControlName="lname" placeholder="First Name"/>
+                Last Name <input class="form-control mb-2 mr-sm-2" type="text" id="lname" formControlName="fname" placeholder="Last Name"/>
+                Email<input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/>
+                Password<input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password" placeholder="Password"/>
+                <div style="text-align: center;">
+                    <button class="btn btn-info" style="margin-inline: 10px;"type="submit" [disabled]="!loginRef.valid">Add Employee</button>
+                    <button class="btn btn-info" type="reset">Reset</button><br><br>
+                    <br/>
+                    {{msg}}
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a routerLink="/">Main Page</a> 
 </div>
