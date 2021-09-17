@@ -1,13 +1,19 @@
-<div>
-    <h2>Delete Employee</h2>
-    <form [formGroup]="deleteRef" (ngSubmit)="deleteEmp()">
-        <label>Employee Email</label>
-        <input type="text" formControlName="email"/><br/>
-        <input type="Submit" value="Delete Employee"/>
-        <input type="Reset" value="reset"/>
-    </form>
-    <br>
-    {{msg}}
-    <br>
+<div style="height:100vh">
+  <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;">Delete Employee</h4>
+            <form [formGroup]="deleteRef" (ngSubmit)="deleteEmp()">
+                Employee Email<input class="form-control mb-2 mr-sm-2" type="text" id="emailID" formControlName="email" placeholder="Email"/>
+                <div style="text-align: center;">
+                    <button class="btn btn-info" style="margin-inline: 10px;"type="submit" [disabled]="!deleteRef.valid">Delete Employee</button>
+                    <button class="btn btn-info" type="reset">Reset</button><br><br>
+                    <br/>
+                    {{msg}}
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
     <a routerLink="/">Main Page</a> 
 </div>

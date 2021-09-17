@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { EmployeeService } from '../employee.service';
 export class DeleteEmployeeComponent implements OnInit {
 
  deleteRef = new FormGroup({
-  email:new FormControl()
+  email:new FormControl("",Validators.required)
   })
   constructor(public deleteEmployee:EmployeeService) { }
   msg="";
@@ -22,7 +22,7 @@ export class DeleteEmployeeComponent implements OnInit {
     let delEmail = this.deleteRef.value;
 
     console.log(delEmail)
-    
+
     this.deleteEmployee.empAccountDelete(delEmail.email).
     subscribe(result=>this.msg=result,err=>console.log(err))
 
