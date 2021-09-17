@@ -33,7 +33,7 @@ export class UserFundsComponent implements OnInit {
     )
   }
 
-  goBack() {
+  goHome() {
     this.router.navigate(['userpanel'],{queryParams: {id:this.email }});
   }
 
