@@ -1,7 +1,7 @@
 
 const { request, response } = require("express");
 let accountModel = require("../model/account.model");
-let raisedTicketModel = require("../model/raiseTicket.model")
+let raisedTicketModel = require("../model/raisedTicket.model")
 
 let addEmployee = async (request, response) => {
     let employee = request.body;    // receive the data from post method
