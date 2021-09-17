@@ -47,6 +47,7 @@ export class UserPanelComponent implements OnInit {
         this.products = result
         , error => console.log(error)
     );
+    
   }
 
   updateCartSize() {
@@ -78,7 +79,7 @@ export class UserPanelComponent implements OnInit {
   }
 
   logout(){
-    this.router.navigate([""]);
+    this.router.navigate(["/userSignIn"]);
   }
 
   editProfile() {

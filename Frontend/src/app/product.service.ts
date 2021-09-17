@@ -8,6 +8,7 @@ export interface ProductItem {
 	name: String,
 	price: Number,
 	quantity: Number,
+	image:String,
 	__v: Number,
 }
 @Injectable({
