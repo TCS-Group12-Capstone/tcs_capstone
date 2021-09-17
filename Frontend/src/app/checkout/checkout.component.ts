@@ -14,6 +14,7 @@ import { UsersService } from '../user.service';
 })
 export class CheckoutComponent implements OnInit {
 
+  tracking: string = "no available tracking number";
   userId: string = "no username available";
   userFund: number = 0.00;
   shipping: number = 10.00;
@@ -45,7 +46,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   purchase() {
-    let tracking = this.trackingService.generate(10);
+    this.tracking = this.trackingService.generate(10);
     let date = new Date().toLocaleDateString();
 
     // charge the customer
@@ -69,7 +70,7 @@ export class CheckoutComponent implements OnInit {
       this.orderService.create({
         userId: this.userId,
         status: "placed",
-        tracking: tracking,
+        tracking: this.tracking,
         productName: product.productName,
         quantity: product.quantity,
         date: date
@@ -98,6 +99,10 @@ export class CheckoutComponent implements OnInit {
       )
     })
 
-    this.router.navigate(["orderConfirmation", tracking]);
+    this.router.navigate([
+      "orderConfirmation", 
+      this.tracking, 
+      this.cartService.email
+    ]);
   }
 }

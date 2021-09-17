@@ -53,7 +53,7 @@ const routes: Routes = [
   { path: "editUserProfile", component: EditUserProfileComponent },
   { path: "userFunds", component: UserFundsComponent },
   { path: "orderStatus", component: OrderStatusComponent },
-  { path: "orderConfirmation/:tracking", component: OrderConfirmationComponent },
+  { path: "orderConfirmation/:tracking/:email", component: OrderConfirmationComponent },
   { path: "adminPanel", component: AdminPanelComponent },
   { path: "unlockUser", component: UnlockUserComponent },
   { path: "UpdateOrderStatus", component: ManageOrdersComponent },

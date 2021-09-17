@@ -8,6 +8,7 @@ import { Cart } from '../classes/cart';
 })
 export class CartService {
 
+  public email: string = "";
   public total: number = 0.00;
   public cart: Cart[] = [];
 

@@ -35,6 +35,7 @@ export class UserPanelComponent implements OnInit {
           this.userId = result._id;
           this.name = result.fname + " " + result.lname; 
           this.email = data.id;
+          this.cartService.email = data.id;
           this.updateCartSize();
         },
         error => console.log(error)
