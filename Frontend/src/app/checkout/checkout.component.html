@@ -23,7 +23,7 @@
     </tbody>
 </table>
 <br>
-<h4 *ngIf="remainFund <= 0">Insufficient fund, please recharge!</h4>
-<input type="button" class="btn btn-success" [disabled]="remainFund <= 0" (click)="purchase()" value="Purchase">
+<h4 *ngIf="remainFund < 0">Insufficient fund, please recharge!</h4>
+<input type="button" class="btn btn-success" [disabled]="remainFund < 0" (click)="purchase()" value="Purchase">
 <br><br>
 <input type="button" class="btn btn-primary" value="Recharge" (click)="rechargeFund()">
