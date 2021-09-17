@@ -8,6 +8,7 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./user-sign-up.component.css']
 })
 export class UserSignUpComponent implements OnInit {
+  
   signUpRef = new FormGroup({
     fname: new FormControl(),
     lname: new FormControl(),
