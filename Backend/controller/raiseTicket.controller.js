@@ -1,4 +1,4 @@
-let RaiseTicketModel = require("../model/raiseTicket.model")
+let RaiseTicketModel = require("../model/raisedTicket.model")
 let accountModel = require("../model/account.model");
 
 let getAllRaiseTicket = (request, response) => {
