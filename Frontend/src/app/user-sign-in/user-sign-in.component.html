@@ -9,7 +9,7 @@
                     <input class="form-control mb-2 mr-sm-2" type="password" id="pass" formControlName="password"
                         placeholder="Password" /><br />
                     <div style="text-align: center;">
-                        <button class="btn btn-info" style="margin-inline: 10px;" type="submit">Login</button>
+                        <button class="btn btn-info" style="margin-inline: 10px;" type="submit" [disabled]="!signInRef.valid">Login</button>
                         <button class="btn btn-info" type="reset">Reset</button>
                         <br />
                         {{msg}}
