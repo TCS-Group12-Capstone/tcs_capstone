@@ -45,6 +45,10 @@ export class CheckoutComponent implements OnInit {
     )
   }
 
+  rechargeFund() {
+    this.router.navigate(["/userFunds"], { queryParams: { email: this.cartService.email } });
+  }
+
   purchase() {
     this.tracking = this.trackingService.generate(10);
     let date = new Date().toLocaleDateString();
