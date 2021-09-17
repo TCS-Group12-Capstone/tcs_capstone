@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlContainer, FormControl, FormGroup } from '@angular/forms';
+import { ControlContainer, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -11,10 +11,10 @@ export class AddEmployeeComponent implements OnInit {
 
 
 loginRef = new FormGroup({
-    fname:new FormControl(),
-    lname:new FormControl(),
-    email:new FormControl(),
-    password:new FormControl()
+    fname:new FormControl("",Validators.required),
+    lname:new FormControl("",Validators.required),
+    email:new FormControl("",Validators.required),
+    password:new FormControl("",Validators.required)
   })
 
   constructor(public addEmployee:EmployeeService) { }
