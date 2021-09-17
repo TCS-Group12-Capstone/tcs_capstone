@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlContainer, FormControl, FormGroup } from '@angular/forms';
+import { ControlContainer, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../employee.service';
 import { sharedService } from '../shared-service/shared.service';
@@ -12,8 +12,8 @@ import { sharedService } from '../shared-service/shared.service';
 export class EmployeeSigninComponent implements OnInit {
   msg = "";
   loginRef = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl()
+    email: new FormControl("",Validators.required),
+    password: new FormControl("",Validators.required)
   })
   constructor(public empService: EmployeeService, public router: Router, private service: sharedService) { }
 
