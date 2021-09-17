@@ -1,14 +1,27 @@
-<form [formGroup]="ticketForm" (ngSubmit)="submitTicket()">
-    <label for="email">Email: </label>
-    <input type="email" formControlName="email">
-    <br>
-    <label for="reason">Reason: </label>
-    <input type="text" formControlName="reason">
-    <br>
-    <button class="btn btn-success" type="submit" [disabled]="!ticketForm.valid">Submit</button>
-    <button class="btn btn-danger" type="reset">Clear</button>
-</form> 
-<br>
-{{msg}}
-<br><br>
-<button class="btn btn-primary" routerLink="/">Home</button>
+<div style="height:100vh">
+    <div class="d-flex align-items-center flex-column justify-content-center h-100 text-white">
+        <div class="card bg-dark">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align: center;">Raise ticket</h4>
+                <form [formGroup]="ticketForm" (ngSubmit)="submitTicket()">
+                    <label for="email">Email: </label>
+                    <input class="form-control mb-2 mr-sm-2" type="email" formControlName="email" id="email" placeholder="email@example.com">
+                    <br>
+                    <label for="reason">Reason: </label>
+                    <input class="form-control mb-2 mr-sm-2" type="text" formControlName="reason" id="reason" placeholder="what do you need help with?">
+                    <br>
+                    <div style="text-align: center;">
+                        <button style="margin-inline: 10px;" class="btn btn-info" type="submit" [disabled]="!ticketForm.valid">Submit</button>
+                        <button class="btn btn-danger" type="reset">Clear</button>
+                    </div>
+                    <br>
+                    {{msg}}
+                    <br><br>
+                </form>
+                <div style="text-align: center;">
+                    <button class="btn btn-secondary" routerLink="/userSignIn">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
