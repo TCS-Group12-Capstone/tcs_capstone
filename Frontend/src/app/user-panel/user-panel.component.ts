@@ -51,7 +51,7 @@ export class UserPanelComponent implements OnInit {
 
   updateCartSize() {
     this.cartService.getCart(this.userId).subscribe(
-      result => { this.showCartSize(result) },
+      result => this.showCartSize(result),
       error => console.log(error)
     )
   }
